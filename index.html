@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FINALLY — The Altar of Incense Worship Night</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --navy: #0D1B2A;
+    --navy-mid: #122234;
+    --navy-light: #1a3047;
+    --gold: #C9A84C;
+    --gold-light: #DFC07A;
+    --gold-dim: rgba(201,168,76,0.14);
+    --cream: #F5F0E8;
+    --cream-dim: rgba(245,240,232,0.68);
+    --divider: rgba(201,168,76,0.28);
+  }
+  html { scroll-behavior: smooth; }
+  body { background: var(--navy); color: var(--cream); font-family: 'Inter', sans-serif; font-weight: 300; font-size: 16px; line-height: 1.75; overflow-x: hidden; }
+
+  /* NAV */
+  nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; padding: 1rem 2rem; display: flex; justify-content: space-between; align-items: center; background: rgba(13,27,42,0.92); backdrop-filter: blur(12px); border-bottom: 0.5px solid var(--divider); }
+  .nav-brand { font-family: 'Cormorant Garamond', serif; font-size: 1rem; letter-spacing: 0.12em; color: var(--gold); text-transform: uppercase; font-weight: 400; }
+  .nav-links { display: flex; gap: 2rem; list-style: none; }
+  .nav-links a { text-decoration: none; font-size: 0.75rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--cream-dim); transition: color 0.2s; }
+  .nav-links a:hover { color: var(--gold); }
+
+  /* HERO */
+  .hero { min-height: 100vh; position: relative; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 9rem 2rem 5rem; overflow: hidden; }
+  .hero-bg { position: absolute; inset: 0; background: radial-gradient(ellipse 70% 55% at 50% 85%, rgba(201,168,76,0.1) 0%, transparent 70%), radial-gradient(ellipse 45% 55% at 15% 15%, rgba(201,168,76,0.05) 0%, transparent 65%), linear-gradient(180deg, #080f18 0%, #0D1B2A 45%, #091521 100%); }
+  .hero-flames { position: absolute; inset: 0; pointer-events: none; overflow: hidden; }
+  .flame { position: absolute; opacity: 0.2; animation: flicker 3.2s ease-in-out infinite alternate; }
+  @keyframes flicker { 0% { opacity: 0.16; transform: scaleX(1) translateY(0); } 50% { opacity: 0.25; transform: scaleX(0.92) translateY(-5px); } 100% { opacity: 0.18; transform: scaleX(1.04) translateY(-2px); } }
+  .flame:nth-child(2) { animation-delay: 0.8s; }
+  .flame:nth-child(3) { animation-delay: 1.6s; }
+  .hero-content { position: relative; z-index: 2; max-width: 820px; }
+  .hero-eyebrow { font-size: 0.7rem; font-weight: 400; letter-spacing: 0.3em; text-transform: uppercase; color: var(--gold); margin-bottom: 1.4rem; }
+  .hero-presents { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: clamp(1rem, 2.5vw, 1.4rem); color: var(--cream-dim); font-weight: 300; margin-bottom: 0.3rem; }
+  .hero-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(4rem, 11vw, 7.5rem); font-weight: 300; line-height: 0.92; color: var(--cream); letter-spacing: -0.01em; margin-bottom: 0.5rem; }
+  .hero-title span { color: var(--gold); font-style: italic; }
+  .hero-subtitle { font-family: 'Cormorant Garamond', serif; font-size: clamp(1.1rem, 2.8vw, 1.65rem); font-weight: 300; font-style: italic; color: var(--cream-dim); margin-bottom: 2.5rem; }
+  .hero-scripture { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 0.98rem; color: rgba(201,168,76,0.72); margin-bottom: 2.8rem; max-width: 480px; margin-left: auto; margin-right: auto; }
+  .hero-meta { display: flex; flex-wrap: wrap; justify-content: center; gap: 0.4rem 2rem; margin-bottom: 3rem; font-size: 0.85rem; letter-spacing: 0.06em; color: var(--cream-dim); }
+  .hero-meta span { display: flex; align-items: center; gap: 0.4rem; }
+  .dot { width: 4px; height: 4px; border-radius: 50%; background: var(--gold); display: inline-block; flex-shrink: 0; }
+
+  /* BUTTONS */
+  .btn-gold { display: inline-block; padding: 1rem 2.8rem; background: transparent; border: 1px solid var(--gold); color: var(--gold); font-family: 'Inter', sans-serif; font-size: 0.76rem; font-weight: 400; letter-spacing: 0.22em; text-transform: uppercase; text-decoration: none; cursor: pointer; transition: background 0.25s, color 0.25s, box-shadow 0.25s; }
+  .btn-gold:hover { background: var(--gold); color: var(--navy); box-shadow: 0 0 22px rgba(201,168,76,0.3); }
+  .btn-solid { display: inline-block; padding: 1rem 2.8rem; background: var(--gold); border: 1px solid var(--gold); color: var(--navy); font-family: 'Inter', sans-serif; font-size: 0.76rem; font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase; text-decoration: none; cursor: pointer; transition: background 0.2s, box-shadow 0.2s; border-radius: 0; }
+  .btn-solid:hover { background: var(--gold-light); box-shadow: 0 0 22px rgba(201,168,76,0.4); }
+
+  /* DIVIDERS */
+  .gold-divider { width: 100%; height: 0.5px; background: var(--divider); }
+  .ornament { display: flex; align-items: center; justify-content: center; gap: 1rem; padding: 2rem 0; }
+  .ornament-line { flex: 1; max-width: 100px; height: 0.5px; background: var(--divider); }
+  .ornament-diamond { width: 6px; height: 6px; background: var(--gold); transform: rotate(45deg); opacity: 0.65; }
+
+  /* SECTIONS */
+  .section-wrap { padding: 5rem 2rem; max-width: 900px; margin: 0 auto; }
+  .section-eyebrow { font-size: 0.68rem; font-weight: 400; letter-spacing: 0.3em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.9rem; }
+  .section-heading { font-family: 'Cormorant Garamond', serif; font-size: clamp(2rem, 5vw, 3rem); font-weight: 300; line-height: 1.15; color: var(--cream); margin-bottom: 1.5rem; }
+  .section-heading em { color: var(--gold); font-style: italic; }
+
+  /* ABOUT */
+  .about-body { font-size: 1.02rem; color: var(--cream-dim); max-width: 620px; line-height: 1.9; margin-bottom: 1rem; }
+  .scripture-block { margin-top: 2.2rem; padding: 1.4rem 1.8rem; border-left: 2px solid var(--gold); background: var(--gold-dim); }
+  .scripture-block p { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 1.18rem; color: var(--cream); line-height: 1.7; }
+  .scripture-block cite { display: block; margin-top: 0.5rem; font-size: 0.78rem; letter-spacing: 0.12em; color: var(--gold); font-style: normal; }
+
+  /* SPEAKER */
+  .speaker-card { display: flex; gap: 2.5rem; align-items: flex-start; background: var(--navy-mid); border: 0.5px solid var(--divider); padding: 2rem; }
+  .speaker-photo { flex-shrink: 0; width: 140px; height: 160px; background: var(--navy-light); border: 1px solid var(--divider); display: flex; align-items: center; justify-content: center; color: rgba(201,168,76,0.35); font-size: 0.68rem; letter-spacing: 0.1em; text-align: center; overflow: hidden; }
+  .speaker-photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .speaker-name { font-family: 'Cormorant Garamond', serif; font-size: 1.6rem; font-weight: 400; color: var(--cream); margin-bottom: 0.2rem; }
+  .speaker-role { font-size: 0.7rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); margin-bottom: 1rem; }
+  .speaker-bio { font-size: 0.92rem; color: var(--cream-dim); line-height: 1.85; }
+
+  /* TICKET CARDS */
+  .ticket-card { background: var(--navy-mid); border: 0.5px solid var(--divider); padding: 2rem; text-align: center; }
+  .ticket-price-big { font-family: 'Cormorant Garamond', serif; font-size: 3.8rem; font-weight: 300; color: var(--cream); line-height: 1; }
+  .ticket-label { font-size: 0.68rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.5rem; }
+  .ticket-includes { margin-top: 1rem; }
+  .ticket-includes li { font-size: 0.82rem; color: var(--cream-dim); list-style: none; padding: 0.25rem 0; border-top: 0.5px solid rgba(201,168,76,0.12); }
+  .ticket-includes li:first-child { border-top: none; }
+
+  /* PAYMENT STEPS */
+  .steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 0; margin: 2.5rem 0; border: 0.5px solid var(--divider); }
+  .step { padding: 1.5rem; position: relative; border-right: 0.5px solid var(--divider); }
+  .step:last-child { border-right: none; }
+  .step-num { font-family: 'Cormorant Garamond', serif; font-size: 2.5rem; color: var(--gold); opacity: 0.4; line-height: 1; margin-bottom: 0.5rem; }
+  .step-title { font-size: 0.8rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--cream); margin-bottom: 0.4rem; }
+  .step-desc { font-size: 0.8rem; color: var(--cream-dim); line-height: 1.6; }
+
+  /* FORM */
+  .form-wrap { background: var(--navy-mid); border: 0.5px solid var(--divider); padding: 2.5rem; margin-top: 2rem; }
+  .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.2rem; }
+  .form-group { display: flex; flex-direction: column; gap: 0.35rem; }
+  .form-group.full { grid-column: 1 / -1; }
+  .form-group label { font-size: 0.68rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--gold); }
+  .form-group input, .form-group select {
+    background: var(--navy); border: 0.5px solid rgba(201,168,76,0.28); color: var(--cream);
+    padding: 0.85rem 1rem; font-family: 'Inter', sans-serif; font-size: 0.9rem; font-weight: 300;
+    outline: none; width: 100%; transition: border-color 0.2s; -webkit-appearance: none; appearance: none; border-radius: 0;
+  }
+  .form-group input:focus, .form-group select:focus { border-color: var(--gold); }
+  .form-group select {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23C9A84C' stroke-width='1.5' fill='none'/%3E%3C/svg%3E");
+    background-repeat: no-repeat; background-position: right 1rem center; padding-right: 2.5rem; cursor: pointer;
+  }
+  .form-group select option { background: var(--navy); }
+  .total-display { margin-top: 1.5rem; padding: 1rem 1.25rem; background: var(--gold-dim); border: 0.5px solid rgba(201,168,76,0.35); display: flex; justify-content: space-between; align-items: center; }
+  .total-display span:first-child { font-size: 0.72rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gold); }
+  .total-display .total-amount { font-family: 'Cormorant Garamond', serif; font-size: 1.8rem; color: var(--cream); }
+  .pay-note { margin-top: 1rem; font-size: 0.78rem; color: var(--cream-dim); font-style: italic; }
+  .non-refund { font-size: 0.75rem; color: rgba(201,168,76,0.65); margin-top: 0.5rem; }
+  .submit-row { margin-top: 2rem; display: flex; align-items: center; gap: 1.5rem; flex-wrap: wrap; }
+
+  /* PAYFAST FORM hidden inputs — styled */
+  #payfast-form { display: none; }
+
+  /* PAYFAST LOGOS */
+  .payment-logos { display: flex; align-items: center; gap: 1rem; flex-wrap: wrap; margin-top: 1.5rem; }
+  .payment-logos span { font-size: 0.68rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--cream-dim); }
+  .bank-badges { display: flex; gap: 0.5rem; flex-wrap: wrap; }
+  .bank-badge { font-size: 0.65rem; letter-spacing: 0.08em; padding: 3px 8px; border: 0.5px solid var(--divider); color: var(--cream-dim); }
+
+  /* GOOGLE SHEETS INFO */
+  .db-info { background: var(--gold-dim); border: 0.5px solid rgba(201,168,76,0.35); padding: 1.5rem 1.75rem; margin-top: 2rem; }
+  .db-info-title { font-size: 0.7rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.6rem; }
+  .db-info-body { font-size: 0.85rem; color: var(--cream-dim); line-height: 1.7; }
+
+  /* SUCCESS PAGE */
+  .success-page { display: none; min-height: 60vh; align-items: center; justify-content: center; text-align: center; flex-direction: column; padding: 4rem 2rem; }
+  .success-icon { font-size: 3rem; margin-bottom: 1.5rem; }
+  .success-heading { font-family: 'Cormorant Garamond', serif; font-size: 2.5rem; color: var(--gold); margin-bottom: 1rem; }
+  .success-body { font-size: 1rem; color: var(--cream-dim); max-width: 480px; }
+
+  /* FOOTER */
+  footer { border-top: 0.5px solid var(--divider); padding: 3rem 2rem; text-align: center; }
+  .footer-brand { font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; font-weight: 300; font-style: italic; color: var(--gold); margin-bottom: 1.5rem; }
+  .footer-contact { display: flex; justify-content: center; flex-wrap: wrap; gap: 0.4rem 2rem; font-size: 0.8rem; color: var(--cream-dim); margin-bottom: 1.5rem; }
+  .footer-contact a { color: var(--cream-dim); text-decoration: none; transition: color 0.2s; }
+  .footer-contact a:hover { color: var(--gold); }
+  .footer-social { display: flex; justify-content: center; gap: 1.2rem; margin-bottom: 2rem; }
+  .footer-social a { width: 36px; height: 36px; border: 0.5px solid var(--divider); display: flex; align-items: center; justify-content: center; color: var(--cream-dim); text-decoration: none; font-size: 0.65rem; letter-spacing: 0.06em; transition: border-color 0.2s, color 0.2s; }
+  .footer-social a:hover { border-color: var(--gold); color: var(--gold); }
+  .footer-copy { font-size: 0.7rem; color: rgba(245,240,232,0.3); letter-spacing: 0.1em; }
+
+  /* MOBILE */
+  @media (max-width: 640px) {
+    .nav-links { display: none; }
+    .form-grid { grid-template-columns: 1fr; }
+    .form-group.full { grid-column: 1; }
+    .speaker-card { flex-direction: column; }
+    .speaker-photo { width: 100%; height: 200px; }
+    .form-wrap { padding: 1.5rem; }
+    .section-wrap { padding: 3.5rem 1.25rem; }
+    .steps { grid-template-columns: 1fr; }
+    .step { border-right: none; border-bottom: 0.5px solid var(--divider); }
+    .step:last-child { border-bottom: none; }
+    .submit-row { flex-direction: column; align-items: flex-start; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .flame { animation: none; }
+    html { scroll-behavior: auto; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <span class="nav-brand">Let My Worship Rise</span>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#host">Host</a></li>
+    <li><a href="#tickets">Tickets</a></li>
+    <li><a href="#register">Register</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<div style="min-height:100vh; position:relative; display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center; padding:9rem 2rem 5rem; overflow:hidden;">
+  <div class="hero-bg" style="position:absolute;inset:0;"></div>
+  <div class="hero-flames">
+    <svg class="flame" style="left:7%;bottom:12%;width:55px;" viewBox="0 0 60 120" fill="none"><ellipse cx="30" cy="95" rx="8" ry="25" fill="#C9A84C"/><path d="M30 10 C20 40 10 60 30 90 C50 60 40 40 30 10Z" fill="#DFC07A"/><ellipse cx="30" cy="80" rx="4" ry="12" fill="#fff" opacity="0.4"/></svg>
+    <svg class="flame" style="right:10%;bottom:9%;width:42px;" viewBox="0 0 60 120" fill="none"><ellipse cx="30" cy="95" rx="8" ry="25" fill="#C9A84C"/><path d="M30 10 C20 40 10 60 30 90 C50 60 40 40 30 10Z" fill="#DFC07A"/><ellipse cx="30" cy="80" rx="4" ry="12" fill="#fff" opacity="0.4"/></svg>
+    <svg class="flame" style="left:52%;transform:translateX(-50%);bottom:4%;width:28px;opacity:0.1;" viewBox="0 0 60 120" fill="none"><ellipse cx="30" cy="95" rx="8" ry="25" fill="#C9A84C"/><path d="M30 10 C20 40 10 60 30 90 C50 60 40 40 30 10Z" fill="#DFC07A"/></svg>
+  </div>
+  <div style="position:relative;z-index:2;max-width:820px;">
+    <p class="hero-eyebrow">30 October 2026 &nbsp;·&nbsp; 17:30</p>
+    <p class="hero-presents">Let My Worship Rise presents</p>
+    <h1 style="font-family:'Cormorant Garamond',serif;font-size:clamp(4rem,11vw,7.5rem);font-weight:300;line-height:0.92;color:var(--cream);margin-bottom:0.5rem;"><span style="color:var(--gold);font-style:italic;">Finally</span></h1>
+    <p style="font-family:'Cormorant Garamond',serif;font-size:clamp(1.1rem,2.8vw,1.65rem);font-weight:300;font-style:italic;color:var(--cream-dim);margin-bottom:2.5rem;">The Altar of Incense Worship<br>with Pastor Comfort</p>
+    <p style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:0.98rem;color:rgba(201,168,76,0.72);margin-bottom:2.8rem;max-width:480px;margin-left:auto;margin-right:auto;">"I pour out my complaint before him; I tell my trouble before him." — Psalm 142:2</p>
+    <div class="hero-meta">
+      <span><span class="dot"></span> House of Liberty Christ First Ministry</span>
+      <span><span class="dot"></span> 17:30 &nbsp;·&nbsp; 30 Oct 2026</span>
+      <span><span class="dot"></span> Tickets from R150</span>
+    </div>
+    <a href="#register" class="btn-gold">Secure Your Seat</a>
+  </div>
+</div>
+
+<div class="gold-divider"></div>
+
+<!-- ABOUT -->
+<div class="section-wrap" id="about">
+  <p class="section-eyebrow">About the night</p>
+  <h2 class="section-heading">A night to <em>pour out</em><br>before the Lord</h2>
+  <p class="about-body">There is a place at the altar where words fail and worship takes over — a holy exchange between a weary soul and a faithful God. <em>Finally</em> is an evening of deep, intimate worship where we lay down our burdens, open our hearts, and encounter the presence of the Lord together.</p>
+  <p class="about-body">Rooted in Psalm 142:2, this gathering invites you to come as you are — not to perform, but to pour out. To let your worship rise as incense before the throne.</p>
+  <div class="scripture-block">
+    <p>"I pour out my complaint before him; I tell my trouble before him."</p>
+    <cite>— Psalm 142:2 (KJV)</cite>
+  </div>
+</div>
+
+<div class="ornament"><div class="ornament-line"></div><div class="ornament-diamond"></div><div class="ornament-line"></div></div>
+
+<!-- HOST -->
+<div class="section-wrap" id="host" style="padding-top:1rem;">
+  <p class="section-eyebrow">Your host for the evening</p>
+  <h2 class="section-heading">Meet <em>Pastor Comfort</em></h2>
+  <div class="speaker-card">
+    <div class="speaker-photo"><span style="padding:0.5rem;line-height:1.6;">Photo<br>coming<br>soon</span></div>
+    <div>
+      <p class="speaker-name">Pastor Comfort Makhadi</p>
+      <p class="speaker-role">Worship Leader &amp; Host</p>
+      <p class="speaker-bio">Pastor Comfort Makhadi is a passionate worshipper and minister dedicated to creating spaces where believers encounter the living God. With a heart for authentic, spirit-led worship, she leads with vulnerability, faith, and an unquenchable hunger for God's presence. The Altar of Incense Worship Night is a reflection of her calling — to help God's people lay down their burdens and lift up their praise.</p>
+    </div>
+  </div>
+</div>
+
+<div class="ornament"><div class="ornament-line"></div><div class="ornament-diamond"></div><div class="ornament-line"></div></div>
+
+<!-- TICKETS -->
+<div class="section-wrap" id="tickets" style="padding-top:1rem;">
+  <p class="section-eyebrow">Tickets &amp; payment</p>
+  <h2 class="section-heading">Secure your <em>seat</em></h2>
+
+  <!-- How it works steps -->
+  <div class="steps">
+    <div class="step">
+      <div class="step-num">01</div>
+      <div class="step-title">Fill in details</div>
+      <div class="step-desc">Enter your name, email, phone and how many tickets you need.</div>
+    </div>
+    <div class="step">
+      <div class="step-num">02</div>
+      <div class="step-title">Pay securely</div>
+      <div class="step-desc">You'll be taken directly to PayFast — choose your bank, card, or SnapScan to pay.</div>
+    </div>
+    <div class="step">
+      <div class="step-num">03</div>
+      <div class="step-title">Confirmed</div>
+      <div class="step-desc">Payment goes straight to our account. You'll receive a confirmation by email.</div>
+    </div>
+  </div>
+
+  <!-- Ticket card -->
+  <div class="ticket-card">
+    <p class="ticket-label">In-person ticket</p>
+    <p class="ticket-price-big">R150 <span style="font-size:1rem;color:var(--cream-dim);font-family:'Inter',sans-serif;">per person</span></p>
+    <ul class="ticket-includes">
+      <li>Full evening worship experience</li>
+      <li>Entry to House of Liberty Christ First Ministry</li>
+      <li>Live worship with Pastor Comfort Makhadi</li>
+    </ul>
+  </div>
+
+  <div class="payment-logos" style="margin-top:1.5rem;">
+    <span>Accepted payments:</span>
+    <div class="bank-badges">
+      <span class="bank-badge">FNB</span>
+      <span class="bank-badge">Absa</span>
+      <span class="bank-badge">Capitec</span>
+      <span class="bank-badge">Standard Bank</span>
+      <span class="bank-badge">Nedbank</span>
+      <span class="bank-badge">Credit Card</span>
+      <span class="bank-badge">SnapScan</span>
+    </div>
+  </div>
+  <p style="font-size:0.75rem;color:var(--cream-dim);margin-top:0.75rem;font-style:italic;">Payments processed securely via PayFast. Your money goes directly to Let My Worship Rise.</p>
+</div>
+
+<div class="ornament"><div class="ornament-line"></div><div class="ornament-diamond"></div><div class="ornament-line"></div></div>
+
+<!-- REGISTER -->
+<div class="section-wrap" id="register" style="padding-top:1rem;">
+  <p class="section-eyebrow">Registration</p>
+  <h2 class="section-heading">Complete your <em>registration</em></h2>
+  <p style="color:var(--cream-dim);font-size:0.92rem;margin-bottom:0;">Fill in your details below. You'll be taken directly to the PayFast secure payment page — choose your bank or card to pay R150 per ticket directly to our account.</p>
+
+  <div class="form-wrap">
+    <!-- STEP 1: Collect details, then build PayFast form and submit -->
+    <div id="step1">
+      <div class="form-grid">
+        <div class="form-group">
+          <label for="fname">Full name *</label>
+          <input type="text" id="fname" placeholder="Your full name" required>
+        </div>
+        <div class="form-group">
+          <label for="femail">Email address *</label>
+          <input type="email" id="femail" placeholder="your@email.com" required>
+        </div>
+        <div class="form-group">
+          <label for="fphone">Phone (WhatsApp) *</label>
+          <input type="tel" id="fphone" placeholder="078 000 0000" required>
+        </div>
+        <div class="form-group">
+          <label for="ftickets">Number of tickets *</label>
+          <select id="ftickets" required>
+            <option value="" disabled selected>Select quantity</option>
+            <option value="1">1 ticket — R150</option>
+            <option value="2">2 tickets — R300</option>
+            <option value="3">3 tickets — R450</option>
+            <option value="4">4 tickets — R600</option>
+            <option value="5">5 tickets — R750</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="total-display" id="totalDisplay" style="display:none;">
+        <span>Total to pay</span>
+        <span class="total-amount" id="totalAmount">R0</span>
+      </div>
+
+      <div class="submit-row">
+        <button class="btn-solid" onclick="proceedToPayment()">Proceed to Payment →</button>
+        <p class="pay-note">You'll be redirected to PayFast's secure checkout.</p>
+      </div>
+      <p class="non-refund">⚠ Tickets are non-refundable once payment is made.</p>
+    </div>
+
+    <!-- Hidden PayFast form — populated by JS and auto-submitted -->
+    <!-- ================================================================
+         PAYFAST SETUP INSTRUCTIONS:
+         1. Sign up at payfast.co.za → get your Merchant ID and Merchant Key
+         2. Replace YOUR_MERCHANT_ID and YOUR_MERCHANT_KEY below
+         3. Set your return_url to: https://let-my-worship-rise.netlify.app/?success=true
+         4. Set your cancel_url to: https://let-my-worship-rise.netlify.app/#register
+         5. Set your notify_url to your Zapier webhook URL (see setup guide below)
+         6. Change action to https://www.payfast.co.za/eng/process (remove "sandbox." for live)
+    ================================================================ -->
+    <form id="payfast-form" action="https://sandbox.payfast.co.za/eng/process" method="POST">
+      <input type="hidden" name="merchant_id" value="YOUR_MERCHANT_ID">
+      <input type="hidden" name="merchant_key" value="YOUR_MERCHANT_KEY">
+      <input type="hidden" name="return_url" value="https://let-my-worship-rise.netlify.app/?success=true">
+      <input type="hidden" name="cancel_url" value="https://let-my-worship-rise.netlify.app/#register">
+      <input type="hidden" name="notify_url" value="YOUR_ZAPIER_WEBHOOK_URL">
+      <input type="hidden" name="name_first" id="pf_name_first" value="">
+      <input type="hidden" name="name_last" id="pf_name_last" value="">
+      <input type="hidden" name="email_address" id="pf_email" value="">
+      <input type="hidden" name="cell_number" id="pf_cell" value="">
+      <input type="hidden" name="m_payment_id" id="pf_payment_id" value="">
+      <input type="hidden" name="amount" id="pf_amount" value="">
+      <input type="hidden" name="item_name" id="pf_item_name" value="">
+      <input type="hidden" name="item_description" id="pf_item_desc" value="">
+      <input type="hidden" name="email_confirmation" value="1">
+      <input type="hidden" name="confirmation_address" value="letmyworshiprise@gmail.com">
+    </form>
+  </div>
+
+  <!-- Success message shown on return from PayFast -->
+  <div id="successBanner" style="display:none; margin-top:2rem; padding:2rem; background:var(--gold-dim); border:0.5px solid var(--gold); text-align:center;">
+    <p style="font-family:'Cormorant Garamond',serif; font-size:1.6rem; color:var(--gold); margin-bottom:0.5rem;">🕊 Your seat is secured.</p>
+    <p style="font-size:0.9rem; color:var(--cream-dim);">Payment received. Check your email for confirmation. We look forward to worshipping with you on 30 October 2026.</p>
+  </div>
+</div>
+
+<div class="gold-divider" style="margin-top:2rem;"></div>
+
+<!-- FOOTER -->
+<footer>
+  <p class="footer-brand">Let My Worship Rise</p>
+  <div class="footer-contact">
+    <span>📍 House of Liberty Christ First Ministry</span>
+    <a href="tel:0826887949">082 688 7949</a>
+    <a href="tel:0780946174">078 094 6174</a>
+    <a href="https://wa.me/27780946174">WhatsApp</a>
+    <a href="mailto:letmyworshiprise@gmail.com">letmyworshiprise@gmail.com</a>
+  </div>
+  <div class="footer-social">
+    <a href="#" title="Instagram">IG</a>
+    <a href="#" title="Facebook">FB</a>
+    <a href="#" title="YouTube">YT</a>
+  </div>
+  <p class="footer-copy">© Let My Worship Rise 2026. All rights reserved.</p>
+</footer>
+
+<script>
+  // Show total when tickets selected
+  document.getElementById('ftickets').addEventListener('change', function() {
+    const qty = parseInt(this.value) || 0;
+    const total = qty * 150;
+    const display = document.getElementById('totalDisplay');
+    const amount = document.getElementById('totalAmount');
+    if (qty > 0) {
+      display.style.display = 'flex';
+      amount.textContent = 'R' + total;
+    }
+  });
+
+  function proceedToPayment() {
+    const name = document.getElementById('fname').value.trim();
+    const email = document.getElementById('femail').value.trim();
+    const phone = document.getElementById('fphone').value.trim();
+    const tickets = parseInt(document.getElementById('ftickets').value);
+
+    // Validation
+    if (!name) { alert('Please enter your full name.'); return; }
+    if (!email || !email.includes('@')) { alert('Please enter a valid email address.'); return; }
+    if (!phone) { alert('Please enter your phone number.'); return; }
+    if (!tickets) { alert('Please select the number of tickets.'); return; }
+
+    const amount = (tickets * 150).toFixed(2);
+    const nameParts = name.split(' ');
+    const firstName = nameParts[0];
+    const lastName = nameParts.slice(1).join(' ') || '-';
+    const paymentId = 'LMWR-' + Date.now();
+    const itemName = 'FINALLY Worship Night - ' + tickets + (tickets === 1 ? ' Ticket' : ' Tickets');
+    const itemDesc = '30 Oct 2026 | House of Liberty Christ First Ministry | ' + tickets + 'x R150';
+
+    // Populate hidden PayFast form
+    document.getElementById('pf_name_first').value = firstName;
+    document.getElementById('pf_name_last').value = lastName;
+    document.getElementById('pf_email').value = email;
+    document.getElementById('pf_cell').value = phone.replace(/\s/g, '');
+    document.getElementById('pf_payment_id').value = paymentId;
+    document.getElementById('pf_amount').value = amount;
+    document.getElementById('pf_item_name').value = itemName;
+    document.getElementById('pf_item_desc').value = itemDesc;
+
+    // Submit to PayFast
+    document.getElementById('payfast-form').submit();
+  }
+
+  // Show success banner if returning from PayFast
+  if (window.location.search.includes('success=true')) {
+    document.getElementById('successBanner').style.display = 'block';
+    document.getElementById('step1').style.display = 'none';
+    setTimeout(() => {
+      document.getElementById('register').scrollIntoView({ behavior: 'smooth' });
+    }, 300);
+  }
+
+  // Nav highlight on scroll
+  const sections = document.querySelectorAll('[id]');
+  const navLinks = document.querySelectorAll('.nav-links a');
+  const obs = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        navLinks.forEach(a => {
+          a.style.color = a.getAttribute('href') === '#' + e.target.id ? 'var(--gold)' : '';
+        });
+      }
+    });
+  }, { threshold: 0.4 });
+  sections.forEach(s => obs.observe(s));
+</script>
+
+</body>
+</html>
