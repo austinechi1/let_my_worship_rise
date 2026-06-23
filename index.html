@@ -23,106 +23,73 @@
   html { scroll-behavior: smooth; }
   body { background: var(--navy); color: var(--cream); font-family: 'Inter', sans-serif; font-weight: 300; font-size: 16px; line-height: 1.75; overflow-x: hidden; }
 
-  /* NAV */
   nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; padding: 1rem 2rem; display: flex; justify-content: space-between; align-items: center; background: rgba(13,27,42,0.93); backdrop-filter: blur(12px); border-bottom: 0.5px solid var(--divider); }
   .nav-brand { font-family: 'Cormorant Garamond', serif; font-size: 1rem; letter-spacing: 0.12em; color: var(--gold); text-transform: uppercase; font-weight: 400; }
   .nav-links { display: flex; gap: 2rem; list-style: none; }
   .nav-links a { text-decoration: none; font-size: 0.75rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--cream-dim); transition: color 0.2s; }
   .nav-links a:hover { color: var(--gold); }
 
-  /* HERO */
   .hero { min-height: 100vh; position: relative; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 9rem 2rem 5rem; overflow: hidden; }
-  .hero-bg { position: absolute; inset: 0; background: radial-gradient(ellipse 70% 55% at 50% 85%, rgba(201,168,76,0.1) 0%, transparent 70%), radial-gradient(ellipse 45% 55% at 15% 15%, rgba(201,168,76,0.05) 0%, transparent 65%), linear-gradient(180deg, #080f18 0%, #0D1B2A 45%, #091521 100%); }
+  .hero-bg { position: absolute; inset: 0; background: radial-gradient(ellipse 70% 55% at 50% 85%, rgba(201,168,76,0.1) 0%, transparent 70%), linear-gradient(180deg, #080f18 0%, #0D1B2A 45%, #091521 100%); }
   .hero-flames { position: absolute; inset: 0; pointer-events: none; overflow: hidden; }
   .flame { position: absolute; opacity: 0.2; animation: flicker 3.2s ease-in-out infinite alternate; }
-  @keyframes flicker { 0% { opacity: 0.16; transform: scaleX(1) translateY(0); } 50% { opacity: 0.25; transform: scaleX(0.92) translateY(-5px); } 100% { opacity: 0.18; transform: scaleX(1.04) translateY(-2px); } }
-  .flame:nth-child(2) { animation-delay: 0.8s; }
-  .flame:nth-child(3) { animation-delay: 1.6s; }
+  @keyframes flicker { 0%{opacity:.16;transform:scaleX(1) translateY(0)} 50%{opacity:.25;transform:scaleX(.92) translateY(-5px)} 100%{opacity:.18;transform:scaleX(1.04) translateY(-2px)} }
+  .flame:nth-child(2){animation-delay:.8s} .flame:nth-child(3){animation-delay:1.6s}
   .hero-content { position: relative; z-index: 2; max-width: 820px; }
-  .hero-eyebrow { font-size: 0.7rem; font-weight: 400; letter-spacing: 0.3em; text-transform: uppercase; color: var(--gold); margin-bottom: 1.4rem; }
-  .hero-presents { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: clamp(1rem, 2.5vw, 1.4rem); color: var(--cream-dim); font-weight: 300; margin-bottom: 0.3rem; }
-  .hero-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(4rem, 11vw, 7.5rem); font-weight: 300; line-height: 0.92; color: var(--cream); margin-bottom: 0.5rem; }
+  .hero-eyebrow { font-size: 0.7rem; letter-spacing: 0.3em; text-transform: uppercase; color: var(--gold); margin-bottom: 1.4rem; }
+  .hero-presents { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: clamp(1rem,2.5vw,1.4rem); color: var(--cream-dim); margin-bottom: 0.3rem; }
+  .hero-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(4rem,11vw,7.5rem); font-weight: 300; line-height: .92; color: var(--cream); margin-bottom: .5rem; }
   .hero-title span { color: var(--gold); font-style: italic; }
-  .hero-subtitle { font-family: 'Cormorant Garamond', serif; font-size: clamp(1.1rem, 2.8vw, 1.65rem); font-weight: 300; font-style: italic; color: var(--cream-dim); margin-bottom: 2.5rem; }
-  .hero-scripture { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 0.98rem; color: rgba(201,168,76,0.72); margin-bottom: 2.8rem; max-width: 480px; margin-left: auto; margin-right: auto; }
-  .hero-meta { display: flex; flex-wrap: wrap; justify-content: center; gap: 0.4rem 2rem; margin-bottom: 3rem; font-size: 0.85rem; letter-spacing: 0.06em; color: var(--cream-dim); }
-  .hero-meta span { display: flex; align-items: center; gap: 0.4rem; }
-  .dot { width: 4px; height: 4px; border-radius: 50%; background: var(--gold); display: inline-block; flex-shrink: 0; }
+  .hero-subtitle { font-family: 'Cormorant Garamond', serif; font-size: clamp(1.1rem,2.8vw,1.65rem); font-weight: 300; font-style: italic; color: var(--cream-dim); margin-bottom: 2.5rem; }
+  .hero-scripture { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: .98rem; color: rgba(201,168,76,.72); margin-bottom: 2.8rem; max-width: 480px; margin-left: auto; margin-right: auto; }
+  .hero-meta { display: flex; flex-wrap: wrap; justify-content: center; gap: .4rem 2rem; margin-bottom: 3rem; font-size: .85rem; color: var(--cream-dim); }
+  .hero-meta span { display: flex; align-items: center; gap: .4rem; }
+  .dot { width: 4px; height: 4px; border-radius: 50%; background: var(--gold); display: inline-block; }
 
-  /* BUTTONS */
-  .btn-gold { display: inline-block; padding: 1rem 2.8rem; background: transparent; border: 1px solid var(--gold); color: var(--gold); font-family: 'Inter', sans-serif; font-size: 0.76rem; font-weight: 400; letter-spacing: 0.22em; text-transform: uppercase; text-decoration: none; cursor: pointer; transition: background 0.25s, color 0.25s, box-shadow 0.25s; }
-  .btn-gold:hover { background: var(--gold); color: var(--navy); box-shadow: 0 0 22px rgba(201,168,76,0.3); }
-  .btn-solid { display: block; width: 100%; padding: 1rem 2rem; background: var(--gold); border: none; color: var(--navy); font-family: 'Inter', sans-serif; font-size: 0.78rem; font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase; cursor: pointer; transition: background 0.2s, box-shadow 0.2s; border-radius: 0; text-align: center; }
-  .btn-solid:hover { background: var(--gold-light); box-shadow: 0 0 22px rgba(201,168,76,0.35); }
-  .btn-solid:disabled { opacity: 0.5; cursor: not-allowed; }
-  .btn-outline { display: block; width: 100%; padding: 0.85rem 2rem; background: transparent; border: 0.5px solid var(--divider); color: var(--cream-dim); font-family: 'Inter', sans-serif; font-size: 0.75rem; font-weight: 400; letter-spacing: 0.14em; text-transform: uppercase; cursor: pointer; transition: border-color 0.2s, color 0.2s; border-radius: 0; text-align: center; margin-top: 0.75rem; }
-  .btn-outline:hover { border-color: var(--gold); color: var(--gold); }
+  .btn-gold { display: inline-block; padding: 1rem 2.8rem; background: transparent; border: 1px solid var(--gold); color: var(--gold); font-family: 'Inter', sans-serif; font-size: .76rem; font-weight: 400; letter-spacing: .22em; text-transform: uppercase; text-decoration: none; cursor: pointer; transition: background .25s, color .25s; }
+  .btn-gold:hover { background: var(--gold); color: var(--navy); }
 
-  /* DIVIDERS */
-  .gold-divider { width: 100%; height: 0.5px; background: var(--divider); }
+  .gold-divider { width: 100%; height: .5px; background: var(--divider); }
   .ornament { display: flex; align-items: center; justify-content: center; gap: 1rem; padding: 2rem 0; }
-  .ornament-line { flex: 1; max-width: 100px; height: 0.5px; background: var(--divider); }
-  .ornament-diamond { width: 6px; height: 6px; background: var(--gold); transform: rotate(45deg); opacity: 0.65; }
+  .ornament-line { flex: 1; max-width: 100px; height: .5px; background: var(--divider); }
+  .ornament-diamond { width: 6px; height: 6px; background: var(--gold); transform: rotate(45deg); opacity: .65; }
 
-  /* SECTIONS */
   .section-wrap { padding: 5rem 2rem; max-width: 900px; margin: 0 auto; }
-  .section-eyebrow { font-size: 0.68rem; font-weight: 400; letter-spacing: 0.3em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.9rem; }
-  .section-heading { font-family: 'Cormorant Garamond', serif; font-size: clamp(2rem, 5vw, 3rem); font-weight: 300; line-height: 1.15; color: var(--cream); margin-bottom: 1.5rem; }
+  .section-eyebrow { font-size: .68rem; letter-spacing: .3em; text-transform: uppercase; color: var(--gold); margin-bottom: .9rem; }
+  .section-heading { font-family: 'Cormorant Garamond', serif; font-size: clamp(2rem,5vw,3rem); font-weight: 300; line-height: 1.15; color: var(--cream); margin-bottom: 1.5rem; }
   .section-heading em { color: var(--gold); font-style: italic; }
 
-  /* ABOUT */
   .about-body { font-size: 1.02rem; color: var(--cream-dim); max-width: 620px; line-height: 1.9; margin-bottom: 1rem; }
   .scripture-block { margin-top: 2.2rem; padding: 1.4rem 1.8rem; border-left: 2px solid var(--gold); background: var(--gold-dim); }
   .scripture-block p { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 1.18rem; color: var(--cream); line-height: 1.7; }
-  .scripture-block cite { display: block; margin-top: 0.5rem; font-size: 0.78rem; letter-spacing: 0.12em; color: var(--gold); font-style: normal; }
+  .scripture-block cite { display: block; margin-top: .5rem; font-size: .78rem; letter-spacing: .12em; color: var(--gold); font-style: normal; }
 
-  /* SPEAKER */
-  .speaker-card { display: flex; gap: 2.5rem; align-items: flex-start; background: var(--navy-mid); border: 0.5px solid var(--divider); padding: 2rem; }
-  .speaker-photo { flex-shrink: 0; width: 140px; height: 160px; background: var(--navy-light); border: 1px solid var(--divider); display: flex; align-items: center; justify-content: center; color: rgba(201,168,76,0.35); font-size: 0.68rem; text-align: center; overflow: hidden; }
-  .speaker-photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
-  .speaker-name { font-family: 'Cormorant Garamond', serif; font-size: 1.6rem; font-weight: 400; color: var(--cream); margin-bottom: 0.2rem; }
-  .speaker-role { font-size: 0.7rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); margin-bottom: 1rem; }
-  .speaker-bio { font-size: 0.92rem; color: var(--cream-dim); line-height: 1.85; }
+  .speaker-card { display: flex; gap: 2.5rem; align-items: flex-start; background: var(--navy-mid); border: .5px solid var(--divider); padding: 2rem; }
+  .speaker-photo { flex-shrink: 0; width: 140px; height: 160px; background: var(--navy-light); border: 1px solid var(--divider); display: flex; align-items: center; justify-content: center; color: rgba(201,168,76,.35); font-size: .68rem; text-align: center; overflow: hidden; }
+  .speaker-photo img { width: 100%; height: 100%; object-fit: cover; }
+  .speaker-name { font-family: 'Cormorant Garamond', serif; font-size: 1.6rem; font-weight: 400; color: var(--cream); margin-bottom: .2rem; }
+  .speaker-role { font-size: .7rem; letter-spacing: .2em; text-transform: uppercase; color: var(--gold); margin-bottom: 1rem; }
+  .speaker-bio { font-size: .92rem; color: var(--cream-dim); line-height: 1.85; }
 
-  /* HOW IT WORKS */
-  .steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; margin: 2.5rem 0; border: 0.5px solid var(--divider); }
-  .step { padding: 1.5rem; border-right: 0.5px solid var(--divider); }
-  .step:last-child { border-right: none; }
-  .step-num { font-family: 'Cormorant Garamond', serif; font-size: 2.5rem; color: var(--gold); opacity: 0.4; line-height: 1; margin-bottom: 0.5rem; }
-  .step-title { font-size: 0.8rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--cream); margin-bottom: 0.4rem; }
-  .step-desc { font-size: 0.8rem; color: var(--cream-dim); line-height: 1.6; }
-
-  /* TICKET */
-  .ticket-card { background: var(--navy-mid); border: 0.5px solid var(--divider); padding: 2rem; text-align: center; margin-bottom: 1.5rem; }
+  .ticket-card { background: var(--navy-mid); border: .5px solid var(--divider); padding: 2rem; text-align: center; margin-bottom: 1.5rem; }
   .ticket-price-big { font-family: 'Cormorant Garamond', serif; font-size: 3.8rem; font-weight: 300; color: var(--cream); line-height: 1; }
-  .ticket-label { font-size: 0.68rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.5rem; }
+  .ticket-label { font-size: .68rem; letter-spacing: .2em; text-transform: uppercase; color: var(--gold); margin-bottom: .5rem; }
   .ticket-includes { margin-top: 1rem; }
-  .ticket-includes li { font-size: 0.82rem; color: var(--cream-dim); list-style: none; padding: 0.3rem 0; border-top: 0.5px solid rgba(201,168,76,0.12); }
+  .ticket-includes li { font-size: .82rem; color: var(--cream-dim); list-style: none; padding: .3rem 0; border-top: .5px solid rgba(201,168,76,.12); }
   .ticket-includes li:first-child { border-top: none; }
 
-  /* MULTI-STEP FORM */
-  .form-wrap { background: var(--navy-mid); border: 0.5px solid var(--divider); margin-top: 2rem; overflow: hidden; }
+  /* ===== PAGES ===== */
+  .page { display: none; }
+  .page.active { display: block; }
 
-  /* PROGRESS BAR */
-  .progress-bar { display: flex; border-bottom: 0.5px solid var(--divider); }
-  .progress-step { flex: 1; padding: 1rem; text-align: center; font-size: 0.68rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--cream-dim); border-right: 0.5px solid var(--divider); position: relative; transition: color 0.3s; }
-  .progress-step:last-child { border-right: none; }
-  .progress-step.active { color: var(--gold); }
-  .progress-step.done { color: rgba(201,168,76,0.5); }
-  .progress-step.active::after { content: ''; position: absolute; bottom: -1px; left: 0; right: 0; height: 2px; background: var(--gold); }
-  .step-num-badge { display: inline-block; width: 20px; height: 20px; border-radius: 50%; border: 0.5px solid currentColor; font-size: 0.65rem; line-height: 20px; text-align: center; margin-right: 0.4rem; }
-
-  /* FORM PANELS */
-  .form-panel { display: none; padding: 2.5rem; }
-  .form-panel.active { display: block; }
-  .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.2rem; }
-  .form-group { display: flex; flex-direction: column; gap: 0.35rem; }
-  .form-group.full { grid-column: 1 / -1; }
-  .form-group label { font-size: 0.68rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--gold); }
+  /* PAGE 1 — registration form */
+  .reg-form-wrap { background: var(--navy-mid); border: .5px solid var(--divider); padding: 2.5rem; margin-top: 2rem; }
+  .form-group { display: flex; flex-direction: column; gap: .35rem; margin-bottom: 1.2rem; }
+  .form-group label { font-size: .68rem; letter-spacing: .16em; text-transform: uppercase; color: var(--gold); }
   .form-group input, .form-group select {
-    background: var(--navy); border: 0.5px solid rgba(201,168,76,0.28); color: var(--cream);
-    padding: 0.85rem 1rem; font-family: 'Inter', sans-serif; font-size: 0.9rem; font-weight: 300;
-    outline: none; width: 100%; transition: border-color 0.2s; -webkit-appearance: none; appearance: none; border-radius: 0;
+    background: var(--navy); border: .5px solid rgba(201,168,76,.28); color: var(--cream);
+    padding: .85rem 1rem; font-family: 'Inter', sans-serif; font-size: .9rem; font-weight: 300;
+    outline: none; width: 100%; transition: border-color .2s; -webkit-appearance: none; appearance: none; border-radius: 0;
   }
   .form-group input:focus, .form-group select:focus { border-color: var(--gold); }
   .form-group select {
@@ -130,91 +97,115 @@
     background-repeat: no-repeat; background-position: right 1rem center; padding-right: 2.5rem; cursor: pointer;
   }
   .form-group select option { background: var(--navy); }
-  .field-error { font-size: 0.7rem; color: #e07070; display: none; }
+  .field-error { font-size: .7rem; color: #e07070; display: none; margin-top: .2rem; }
   .form-group.has-error input, .form-group.has-error select { border-color: #e07070; }
   .form-group.has-error .field-error { display: block; }
 
-  /* TOTAL */
-  .total-display { margin: 1.5rem 0; padding: 1rem 1.25rem; background: var(--gold-dim); border: 0.5px solid rgba(201,168,76,0.35); display: flex; justify-content: space-between; align-items: center; }
-  .total-label { font-size: 0.72rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gold); }
-  .total-amount { font-family: 'Cormorant Garamond', serif; font-size: 1.9rem; color: var(--cream); }
+  .total-row { display: flex; justify-content: space-between; align-items: center; padding: 1rem 1.25rem; background: var(--gold-dim); border: .5px solid rgba(201,168,76,.35); margin: 1.5rem 0; }
+  .total-row .lbl { font-size: .72rem; letter-spacing: .14em; text-transform: uppercase; color: var(--gold); }
+  .total-row .amt { font-family: 'Cormorant Garamond', serif; font-size: 2rem; color: var(--cream); }
 
-  /* BANKING DETAILS PANEL */
-  .banking-hero { background: var(--gold-dim); border: 0.5px solid rgba(201,168,76,0.4); padding: 1.75rem; margin-bottom: 1.5rem; }
-  .banking-hero-title { font-size: 0.68rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold); margin-bottom: 1.2rem; }
-  .banking-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
-  .banking-item label { display: block; font-size: 0.65rem; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(201,168,76,0.6); margin-bottom: 0.2rem; }
-  .banking-item .banking-value { font-size: 1rem; color: var(--cream); font-weight: 400; letter-spacing: 0.04em; }
-  .banking-item .banking-value.big { font-family: 'Cormorant Garamond', serif; font-size: 1.5rem; letter-spacing: 0.08em; }
-  .ref-box { margin-top: 1rem; padding: 0.85rem 1rem; background: rgba(201,168,76,0.08); border: 0.5px dashed rgba(201,168,76,0.4); }
-  .ref-box p { font-size: 0.78rem; color: var(--cream-dim); }
-  .ref-box span { color: var(--gold); font-weight: 500; }
+  .btn-proceed { width: 100%; padding: 1.1rem; background: var(--gold); border: none; color: var(--navy); font-family: 'Inter', sans-serif; font-size: .8rem; font-weight: 500; letter-spacing: .2em; text-transform: uppercase; cursor: pointer; transition: background .2s, box-shadow .2s; border-radius: 0; margin-top: .5rem; }
+  .btn-proceed:hover { background: var(--gold-light); box-shadow: 0 0 20px rgba(201,168,76,.35); }
 
-  .amount-due { display: flex; justify-content: space-between; align-items: center; padding: 1rem 1.25rem; background: var(--navy); border: 0.5px solid var(--divider); margin-bottom: 1.5rem; }
-  .amount-due span:first-child { font-size: 0.72rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--cream-dim); }
-  .amount-due span:last-child { font-family: 'Cormorant Garamond', serif; font-size: 1.9rem; color: var(--gold); }
+  /* PAGE 2 — payment page (full screen overlay feel) */
+  .payment-page { background: var(--navy); min-height: 100vh; padding: 7rem 2rem 4rem; }
+  .payment-inner { max-width: 680px; margin: 0 auto; }
+  .payment-back { display: inline-flex; align-items: center; gap: .5rem; font-size: .72rem; letter-spacing: .14em; text-transform: uppercase; color: var(--cream-dim); cursor: pointer; margin-bottom: 2.5rem; background: none; border: none; transition: color .2s; padding: 0; }
+  .payment-back:hover { color: var(--gold); }
+  .payment-back::before { content: '←'; font-size: 1rem; }
 
-  .upload-instruction { font-size: 0.85rem; color: var(--cream-dim); margin-bottom: 1rem; line-height: 1.7; }
+  .payment-heading { font-family: 'Cormorant Garamond', serif; font-size: clamp(1.8rem,5vw,2.6rem); font-weight: 300; color: var(--cream); margin-bottom: .5rem; }
+  .payment-heading em { color: var(--gold); font-style: italic; }
+  .payment-sub { font-size: .88rem; color: var(--cream-dim); margin-bottom: 2.5rem; line-height: 1.7; }
 
-  /* FILE UPLOAD */
-  .file-upload-box { border: 0.5px dashed rgba(201,168,76,0.4); padding: 2rem; text-align: center; cursor: pointer; transition: border-color 0.2s, background 0.2s; position: relative; }
-  .file-upload-box:hover { border-color: var(--gold); background: var(--gold-dim); }
-  .file-upload-box input[type="file"] { position: absolute; inset: 0; opacity: 0; cursor: pointer; width: 100%; height: 100%; }
-  .file-upload-icon { font-size: 2rem; margin-bottom: 0.5rem; }
-  .file-upload-text { font-size: 0.82rem; color: var(--cream-dim); }
-  .file-upload-text strong { color: var(--gold); font-weight: 400; }
-  .file-name { margin-top: 0.75rem; font-size: 0.8rem; color: var(--gold); font-style: italic; display: none; }
+  /* Summary card */
+  .summary-card { background: var(--navy-mid); border: .5px solid var(--divider); padding: 1.25rem 1.5rem; margin-bottom: 2rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; }
+  .summary-name { font-family: 'Cormorant Garamond', serif; font-size: 1.2rem; color: var(--cream); }
+  .summary-meta { font-size: .78rem; color: var(--cream-dim); margin-top: .15rem; }
+  .summary-amount { font-family: 'Cormorant Garamond', serif; font-size: 2.2rem; color: var(--gold); }
 
-  /* SUCCESS */
-  .success-wrap { padding: 3rem 2.5rem; text-align: center; }
-  .success-icon { font-size: 3.5rem; margin-bottom: 1.5rem; }
-  .success-heading { font-family: 'Cormorant Garamond', serif; font-size: 2.2rem; color: var(--gold); margin-bottom: 1rem; font-weight: 300; }
-  .success-body { font-size: 0.92rem; color: var(--cream-dim); line-height: 1.8; max-width: 480px; margin: 0 auto 2rem; }
-  .success-details { background: var(--gold-dim); border: 0.5px solid rgba(201,168,76,0.35); padding: 1.25rem; text-align: left; margin-top: 1.5rem; }
-  .success-details p { font-size: 0.82rem; color: var(--cream-dim); padding: 0.3rem 0; border-bottom: 0.5px solid rgba(201,168,76,0.1); }
-  .success-details p:last-child { border-bottom: none; }
-  .success-details span { color: var(--cream); font-weight: 400; }
+  /* Banking details */
+  .banking-card { background: var(--gold-dim); border: .5px solid rgba(201,168,76,.4); padding: 1.75rem; margin-bottom: 2rem; }
+  .banking-card-title { font-size: .68rem; letter-spacing: .22em; text-transform: uppercase; color: var(--gold); margin-bottom: 1.25rem; }
+  .banking-fields { display: grid; grid-template-columns: 1fr 1fr; gap: 1.2rem; }
+  .bfield label { display: block; font-size: .62rem; letter-spacing: .14em; text-transform: uppercase; color: rgba(201,168,76,.6); margin-bottom: .2rem; }
+  .bfield .bval { font-size: 1rem; color: var(--cream); font-weight: 400; }
+  .bfield .bval.large { font-family: 'Cormorant Garamond', serif; font-size: 1.6rem; letter-spacing: .06em; }
+  .ref-strip { margin-top: 1.25rem; padding: .85rem 1rem; background: rgba(13,27,42,.5); border: .5px dashed rgba(201,168,76,.4); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: .5rem; }
+  .ref-strip span:first-child { font-size: .68rem; letter-spacing: .12em; text-transform: uppercase; color: rgba(201,168,76,.6); }
+  .ref-strip span:last-child { font-size: .95rem; color: var(--gold); font-weight: 400; letter-spacing: .04em; }
 
-  /* NETLIFY hidden */
-  .netlify-hidden { display: none; }
+  /* Upload area */
+  .upload-label { font-size: .68rem; letter-spacing: .18em; text-transform: uppercase; color: var(--gold); margin-bottom: .75rem; display: block; }
+  .upload-area { border: .5px dashed rgba(201,168,76,.4); padding: 2.5rem 2rem; text-align: center; cursor: pointer; transition: border-color .2s, background .2s; position: relative; margin-bottom: .5rem; }
+  .upload-area:hover { border-color: var(--gold); background: var(--gold-dim); }
+  .upload-area input[type="file"] { position: absolute; inset: 0; opacity: 0; cursor: pointer; width: 100%; height: 100%; }
+  .upload-icon { font-size: 2.5rem; margin-bottom: .75rem; }
+  .upload-text { font-size: .88rem; color: var(--cream-dim); line-height: 1.6; }
+  .upload-text strong { color: var(--cream); font-weight: 400; }
+  .upload-chosen { font-size: .82rem; color: var(--gold); font-style: italic; margin-top: .6rem; display: none; text-align: center; }
+  .upload-error { font-size: .72rem; color: #e07070; display: none; margin-bottom: 1rem; }
 
-  /* NON REFUND */
-  .non-refund { font-size: 0.74rem; color: rgba(201,168,76,0.55); margin-top: 0.75rem; font-style: italic; text-align: center; }
+  .btn-submit { width: 100%; padding: 1.2rem; background: var(--gold); border: none; color: var(--navy); font-family: 'Inter', sans-serif; font-size: .82rem; font-weight: 500; letter-spacing: .2em; text-transform: uppercase; cursor: pointer; transition: background .2s, box-shadow .2s; border-radius: 0; margin-top: 1.5rem; }
+  .btn-submit:hover { background: var(--gold-light); box-shadow: 0 0 22px rgba(201,168,76,.4); }
+  .btn-submit:disabled { opacity: .5; cursor: not-allowed; }
+  .non-refund { font-size: .73rem; color: rgba(201,168,76,.55); margin-top: .85rem; text-align: center; font-style: italic; }
 
-  /* FOOTER */
-  footer { border-top: 0.5px solid var(--divider); padding: 3rem 2rem; text-align: center; margin-top: 4rem; }
+  /* PAGE 3 — success */
+  .success-page { background: var(--navy); min-height: 100vh; display: flex; align-items: center; justify-content: center; padding: 7rem 2rem 4rem; }
+  .success-inner { max-width: 560px; margin: 0 auto; text-align: center; }
+  .success-flame { font-size: 4rem; margin-bottom: 1.5rem; animation: flicker 3s ease-in-out infinite alternate; }
+  .success-title { font-family: 'Cormorant Garamond', serif; font-size: 2.8rem; font-weight: 300; color: var(--gold); margin-bottom: 1rem; }
+  .success-msg { font-size: .95rem; color: var(--cream-dim); line-height: 1.85; margin-bottom: 2rem; }
+  .success-summary { background: var(--navy-mid); border: .5px solid var(--divider); padding: 1.5rem; text-align: left; margin-bottom: 2rem; }
+  .success-summary p { font-size: .85rem; color: var(--cream-dim); padding: .4rem 0; border-bottom: .5px solid rgba(201,168,76,.1); display: flex; justify-content: space-between; }
+  .success-summary p:last-child { border-bottom: none; }
+  .success-summary span { color: var(--cream); font-weight: 400; }
+  .success-whatsapp { display: inline-block; padding: .9rem 2rem; border: 1px solid var(--gold); color: var(--gold); font-family: 'Inter', sans-serif; font-size: .76rem; letter-spacing: .18em; text-transform: uppercase; text-decoration: none; transition: background .2s, color .2s; }
+  .success-whatsapp:hover { background: var(--gold); color: var(--navy); }
+
+  /* Netlify hidden form */
+  .nf-hidden { display: none; }
+
+  footer { border-top: .5px solid var(--divider); padding: 3rem 2rem; text-align: center; margin-top: 4rem; }
   .footer-brand { font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; font-weight: 300; font-style: italic; color: var(--gold); margin-bottom: 1.5rem; }
-  .footer-contact { display: flex; justify-content: center; flex-wrap: wrap; gap: 0.4rem 2rem; font-size: 0.8rem; color: var(--cream-dim); margin-bottom: 1.5rem; }
-  .footer-contact a { color: var(--cream-dim); text-decoration: none; transition: color 0.2s; }
+  .footer-contact { display: flex; justify-content: center; flex-wrap: wrap; gap: .4rem 2rem; font-size: .8rem; color: var(--cream-dim); margin-bottom: 1.5rem; }
+  .footer-contact a { color: var(--cream-dim); text-decoration: none; transition: color .2s; }
   .footer-contact a:hover { color: var(--gold); }
   .footer-social { display: flex; justify-content: center; gap: 1.2rem; margin-bottom: 2rem; }
-  .footer-social a { width: 36px; height: 36px; border: 0.5px solid var(--divider); display: flex; align-items: center; justify-content: center; color: var(--cream-dim); text-decoration: none; font-size: 0.65rem; transition: border-color 0.2s, color 0.2s; }
+  .footer-social a { width: 36px; height: 36px; border: .5px solid var(--divider); display: flex; align-items: center; justify-content: center; color: var(--cream-dim); text-decoration: none; font-size: .65rem; transition: border-color .2s, color .2s; }
   .footer-social a:hover { border-color: var(--gold); color: var(--gold); }
-  .footer-copy { font-size: 0.7rem; color: rgba(245,240,232,0.3); letter-spacing: 0.1em; }
+  .footer-copy { font-size: .7rem; color: rgba(245,240,232,.3); letter-spacing: .1em; }
 
-  /* MOBILE */
-  @media (max-width: 640px) {
-    .nav-links { display: none; }
-    .form-grid { grid-template-columns: 1fr; }
-    .form-group.full { grid-column: 1; }
-    .banking-grid { grid-template-columns: 1fr; }
-    .speaker-card { flex-direction: column; }
-    .speaker-photo { width: 100%; height: 200px; }
-    .form-panel { padding: 1.5rem; }
-    .section-wrap { padding: 3.5rem 1.25rem; }
-    .steps { grid-template-columns: 1fr; }
-    .step { border-right: none; border-bottom: 0.5px solid var(--divider); }
-    .step:last-child { border-bottom: none; }
-    .progress-step { font-size: 0.6rem; padding: 0.85rem 0.5rem; }
-    .step-num-badge { display: none; }
+  @media(max-width:640px){
+    .nav-links{display:none}
+    .speaker-card{flex-direction:column}
+    .speaker-photo{width:100%;height:200px}
+    .section-wrap{padding:3.5rem 1.25rem}
+    .reg-form-wrap{padding:1.5rem}
+    .banking-fields{grid-template-columns:1fr}
+    .payment-page,.success-page{padding:6rem 1.25rem 3rem}
+    .summary-card{flex-direction:column;align-items:flex-start}
   }
-  @media (prefers-reduced-motion: reduce) {
-    .flame { animation: none; }
-    html { scroll-behavior: auto; }
+  @media(prefers-reduced-motion:reduce){
+    .flame,.success-flame{animation:none}
+    html{scroll-behavior:auto}
   }
 </style>
 </head>
 <body>
+
+<!-- Netlify form declaration (hidden — required for Netlify to detect the form) -->
+<form name="worship-registration" netlify netlify-honeypot="bot-field" class="nf-hidden" enctype="multipart/form-data">
+  <input type="text" name="fullname">
+  <input type="email" name="email">
+  <input type="tel" name="phone">
+  <input type="text" name="tickets">
+  <input type="text" name="amount">
+  <input type="text" name="reference">
+  <input type="file" name="proof_of_payment">
+</form>
 
 <!-- NAV -->
 <nav>
@@ -227,323 +218,289 @@
   </ul>
 </nav>
 
-<!-- HERO -->
-<div class="hero">
-  <div class="hero-bg"></div>
-  <div class="hero-flames">
-    <svg class="flame" style="left:7%;bottom:12%;width:55px;" viewBox="0 0 60 120" fill="none"><ellipse cx="30" cy="95" rx="8" ry="25" fill="#C9A84C"/><path d="M30 10 C20 40 10 60 30 90 C50 60 40 40 30 10Z" fill="#DFC07A"/><ellipse cx="30" cy="80" rx="4" ry="12" fill="#fff" opacity="0.4"/></svg>
-    <svg class="flame" style="right:10%;bottom:9%;width:42px;" viewBox="0 0 60 120" fill="none"><ellipse cx="30" cy="95" rx="8" ry="25" fill="#C9A84C"/><path d="M30 10 C20 40 10 60 30 90 C50 60 40 40 30 10Z" fill="#DFC07A"/><ellipse cx="30" cy="80" rx="4" ry="12" fill="#fff" opacity="0.4"/></svg>
-    <svg class="flame" style="left:52%;transform:translateX(-50%);bottom:4%;width:28px;opacity:0.1;" viewBox="0 0 60 120" fill="none"><ellipse cx="30" cy="95" rx="8" ry="25" fill="#C9A84C"/><path d="M30 10 C20 40 10 60 30 90 C50 60 40 40 30 10Z" fill="#DFC07A"/></svg>
-  </div>
-  <div class="hero-content">
-    <p class="hero-eyebrow">30 October 2026 &nbsp;·&nbsp; 17:30</p>
-    <p class="hero-presents">Let My Worship Rise presents</p>
-    <h1 class="hero-title"><span>Finally</span></h1>
-    <p class="hero-subtitle">The Altar of Incense Worship<br>with Pastor Comfort</p>
-    <p class="hero-scripture">"I pour out my complaint before him; I tell my trouble before him." — Psalm 142:2</p>
-    <div class="hero-meta">
-      <span><span class="dot"></span>House of Liberty Christ First Ministry</span>
-      <span><span class="dot"></span>17:30 · 30 Oct 2026</span>
-      <span><span class="dot"></span>Tickets R150</span>
+<!-- ===== MAIN SITE (PAGE 1) ===== -->
+<div id="main-site" class="page active">
+
+  <!-- HERO -->
+  <div class="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-flames">
+      <svg class="flame" style="left:7%;bottom:12%;width:55px;" viewBox="0 0 60 120" fill="none"><ellipse cx="30" cy="95" rx="8" ry="25" fill="#C9A84C"/><path d="M30 10 C20 40 10 60 30 90 C50 60 40 40 30 10Z" fill="#DFC07A"/><ellipse cx="30" cy="80" rx="4" ry="12" fill="#fff" opacity="0.4"/></svg>
+      <svg class="flame" style="right:10%;bottom:9%;width:42px;" viewBox="0 0 60 120" fill="none"><ellipse cx="30" cy="95" rx="8" ry="25" fill="#C9A84C"/><path d="M30 10 C20 40 10 60 30 90 C50 60 40 40 30 10Z" fill="#DFC07A"/><ellipse cx="30" cy="80" rx="4" ry="12" fill="#fff" opacity="0.4"/></svg>
+      <svg class="flame" style="left:52%;transform:translateX(-50%);bottom:4%;width:28px;opacity:0.1;" viewBox="0 0 60 120" fill="none"><ellipse cx="30" cy="95" rx="8" ry="25" fill="#C9A84C"/><path d="M30 10 C20 40 10 60 30 90 C50 60 40 40 30 10Z" fill="#DFC07A"/></svg>
     </div>
-    <a href="#register" class="btn-gold">Secure Your Seat</a>
-  </div>
-</div>
-
-<div class="gold-divider"></div>
-
-<!-- ABOUT -->
-<div class="section-wrap" id="about">
-  <p class="section-eyebrow">About the night</p>
-  <h2 class="section-heading">A night to <em>pour out</em><br>before the Lord</h2>
-  <p class="about-body">There is a place at the altar where words fail and worship takes over — a holy exchange between a weary soul and a faithful God. <em>Finally</em> is an evening of deep, intimate worship where we lay down our burdens, open our hearts, and encounter the presence of the Lord together.</p>
-  <p class="about-body">Rooted in Psalm 142:2, this gathering invites you to come as you are — not to perform, but to pour out. To let your worship rise as incense before the throne.</p>
-  <div class="scripture-block">
-    <p>"I pour out my complaint before him; I tell my trouble before him."</p>
-    <cite>— Psalm 142:2 (KJV)</cite>
-  </div>
-</div>
-
-<div class="ornament"><div class="ornament-line"></div><div class="ornament-diamond"></div><div class="ornament-line"></div></div>
-
-<!-- HOST -->
-<div class="section-wrap" id="host" style="padding-top:1rem;">
-  <p class="section-eyebrow">Your host for the evening</p>
-  <h2 class="section-heading">Meet <em>Pastor Comfort</em></h2>
-  <div class="speaker-card">
-    <div class="speaker-photo"><span style="padding:0.5rem;line-height:1.6;">Photo<br>coming<br>soon</span></div>
-    <div>
-      <p class="speaker-name">Pastor Comfort Makhadi</p>
-      <p class="speaker-role">Worship Leader &amp; Host</p>
-      <p class="speaker-bio">Pastor Comfort Makhadi is a passionate worshipper and minister dedicated to creating spaces where believers encounter the living God. With a heart for authentic, spirit-led worship, she leads with vulnerability, faith, and an unquenchable hunger for God's presence. The Altar of Incense Worship Night is a reflection of her calling — to help God's people lay down their burdens and lift up their praise.</p>
-    </div>
-  </div>
-</div>
-
-<div class="ornament"><div class="ornament-line"></div><div class="ornament-diamond"></div><div class="ornament-line"></div></div>
-
-<!-- TICKETS -->
-<div class="section-wrap" id="tickets" style="padding-top:1rem;">
-  <p class="section-eyebrow">Tickets &amp; payment</p>
-  <h2 class="section-heading">Secure your <em>seat</em></h2>
-  <div class="steps">
-    <div class="step">
-      <div class="step-num">01</div>
-      <div class="step-title">Your details</div>
-      <div class="step-desc">Enter your name, email, phone and number of tickets.</div>
-    </div>
-    <div class="step">
-      <div class="step-num">02</div>
-      <div class="step-title">Make payment</div>
-      <div class="step-desc">EFT to our Tyme Bank account and upload your proof of payment.</div>
-    </div>
-    <div class="step">
-      <div class="step-num">03</div>
-      <div class="step-title">You're confirmed</div>
-      <div class="step-desc">We verify your payment and confirm your seat by WhatsApp or email.</div>
-    </div>
-  </div>
-  <div class="ticket-card">
-    <p class="ticket-label">In-person ticket</p>
-    <p class="ticket-price-big">R150 <span style="font-size:1rem;color:var(--cream-dim);font-family:'Inter',sans-serif;font-weight:300;">per person</span></p>
-    <ul class="ticket-includes">
-      <li>Full evening worship experience</li>
-      <li>Entry to House of Liberty Christ First Ministry</li>
-      <li>Live worship with Pastor Comfort Makhadi</li>
-    </ul>
-  </div>
-</div>
-
-<div class="ornament"><div class="ornament-line"></div><div class="ornament-diamond"></div><div class="ornament-line"></div></div>
-
-<!-- REGISTER -->
-<div class="section-wrap" id="register" style="padding-top:1rem;">
-  <p class="section-eyebrow">Registration</p>
-  <h2 class="section-heading">Complete your <em>registration</em></h2>
-
-  <!-- Netlify hidden form for form detection -->
-  <form name="worship-registration" netlify netlify-honeypot="bot-field" class="netlify-hidden" enctype="multipart/form-data">
-    <input type="text" name="fullname">
-    <input type="email" name="email">
-    <input type="tel" name="phone">
-    <input type="text" name="tickets">
-    <input type="text" name="amount">
-    <input type="text" name="reference">
-    <input type="file" name="proof_of_payment">
-  </form>
-
-  <div class="form-wrap">
-
-    <!-- PROGRESS -->
-    <div class="progress-bar">
-      <div class="progress-step active" id="prog-1"><span class="step-num-badge">1</span>Your details</div>
-      <div class="progress-step" id="prog-2"><span class="step-num-badge">2</span>Payment</div>
-      <div class="progress-step" id="prog-3"><span class="step-num-badge">3</span>Confirmed</div>
-    </div>
-
-    <!-- PANEL 1: Details -->
-    <div class="form-panel active" id="panel-1">
-      <div class="form-grid">
-        <div class="form-group full" id="grp-name">
-          <label for="fname">Full name *</label>
-          <input type="text" id="fname" placeholder="Your full name" autocomplete="name">
-          <span class="field-error">Please enter your full name.</span>
-        </div>
-        <div class="form-group" id="grp-email">
-          <label for="femail">Email address *</label>
-          <input type="email" id="femail" placeholder="your@email.com" autocomplete="email">
-          <span class="field-error">Please enter a valid email.</span>
-        </div>
-        <div class="form-group" id="grp-phone">
-          <label for="fphone">WhatsApp number *</label>
-          <input type="tel" id="fphone" placeholder="078 000 0000" autocomplete="tel">
-          <span class="field-error">Please enter your phone number.</span>
-        </div>
-        <div class="form-group full" id="grp-tickets">
-          <label for="ftickets">Number of tickets *</label>
-          <select id="ftickets">
-            <option value="" disabled selected>Select quantity</option>
-            <option value="1">1 ticket — R150</option>
-            <option value="2">2 tickets — R300</option>
-            <option value="3">3 tickets — R450</option>
-            <option value="4">4 tickets — R600</option>
-            <option value="5">5 tickets — R750</option>
-          </select>
-          <span class="field-error">Please select the number of tickets.</span>
-        </div>
+    <div class="hero-content">
+      <p class="hero-eyebrow">30 October 2026 &nbsp;·&nbsp; 17:30</p>
+      <p class="hero-presents">Let My Worship Rise presents</p>
+      <h1 class="hero-title"><span>Finally</span></h1>
+      <p class="hero-subtitle">The Altar of Incense Worship<br>with Pastor Comfort</p>
+      <p class="hero-scripture">"I pour out my complaint before him; I tell my trouble before him." — Psalm 142:2</p>
+      <div class="hero-meta">
+        <span><span class="dot"></span>House of Liberty Christ First Ministry</span>
+        <span><span class="dot"></span>17:30 · 30 Oct 2026</span>
+        <span><span class="dot"></span>Tickets R150</span>
       </div>
-      <div class="total-display" id="totalDisplay" style="display:none;">
-        <span class="total-label">Amount to pay</span>
-        <span class="total-amount" id="totalAmount">R0</span>
+      <a href="#register" class="btn-gold">Secure Your Seat</a>
+    </div>
+  </div>
+
+  <div class="gold-divider"></div>
+
+  <!-- ABOUT -->
+  <div class="section-wrap" id="about">
+    <p class="section-eyebrow">About the night</p>
+    <h2 class="section-heading">A night to <em>pour out</em><br>before the Lord</h2>
+    <p class="about-body">There is a place at the altar where words fail and worship takes over — a holy exchange between a weary soul and a faithful God. <em>Finally</em> is an evening of deep, intimate worship where we lay down our burdens, open our hearts, and encounter the presence of the Lord together.</p>
+    <p class="about-body">Rooted in Psalm 142:2, this gathering invites you to come as you are — not to perform, but to pour out. To let your worship rise as incense before the throne.</p>
+    <div class="scripture-block">
+      <p>"I pour out my complaint before him; I tell my trouble before him."</p>
+      <cite>— Psalm 142:2 (KJV)</cite>
+    </div>
+  </div>
+
+  <div class="ornament"><div class="ornament-line"></div><div class="ornament-diamond"></div><div class="ornament-line"></div></div>
+
+  <!-- HOST -->
+  <div class="section-wrap" id="host" style="padding-top:1rem;">
+    <p class="section-eyebrow">Your host for the evening</p>
+    <h2 class="section-heading">Meet <em>Pastor Comfort</em></h2>
+    <div class="speaker-card">
+      <div class="speaker-photo"><span style="padding:.5rem;line-height:1.6;">Photo<br>coming<br>soon</span></div>
+      <div>
+        <p class="speaker-name">Pastor Comfort Makhadi</p>
+        <p class="speaker-role">Worship Leader &amp; Host</p>
+        <p class="speaker-bio">Pastor Comfort Makhadi is a passionate worshipper and minister dedicated to creating spaces where believers encounter the living God. With a heart for authentic, spirit-led worship, she leads with vulnerability, faith, and an unquenchable hunger for God's presence. The Altar of Incense Worship Night is a reflection of her calling — to help God's people lay down their burdens and lift up their praise.</p>
       </div>
-      <br>
-      <button class="btn-solid" onclick="goToPayment()">Proceed to Payment →</button>
+    </div>
+  </div>
+
+  <div class="ornament"><div class="ornament-line"></div><div class="ornament-diamond"></div><div class="ornament-line"></div></div>
+
+  <!-- TICKETS -->
+  <div class="section-wrap" id="tickets" style="padding-top:1rem;">
+    <p class="section-eyebrow">Tickets</p>
+    <h2 class="section-heading">Secure your <em>seat</em></h2>
+    <div class="ticket-card">
+      <p class="ticket-label">In-person ticket</p>
+      <p class="ticket-price-big">R150 <span style="font-size:1rem;color:var(--cream-dim);font-family:'Inter',sans-serif;font-weight:300;">per person</span></p>
+      <ul class="ticket-includes">
+        <li>Full evening worship experience</li>
+        <li>Entry to House of Liberty Christ First Ministry</li>
+        <li>Live worship with Pastor Comfort Makhadi</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="ornament"><div class="ornament-line"></div><div class="ornament-diamond"></div><div class="ornament-line"></div></div>
+
+  <!-- REGISTRATION FORM -->
+  <div class="section-wrap" id="register" style="padding-top:1rem;">
+    <p class="section-eyebrow">Registration</p>
+    <h2 class="section-heading">Complete your <em>registration</em></h2>
+    <p style="color:var(--cream-dim);font-size:.92rem;">Fill in your details below and click Proceed to Payment to see the banking details and upload your proof of payment.</p>
+
+    <div class="reg-form-wrap">
+      <div class="form-group" id="grp-name">
+        <label for="fname">Full name</label>
+        <input type="text" id="fname" placeholder="Your full name" autocomplete="name">
+        <span class="field-error">Please enter your full name.</span>
+      </div>
+      <div class="form-group" id="grp-email">
+        <label for="femail">Email address</label>
+        <input type="email" id="femail" placeholder="your@email.com" autocomplete="email">
+        <span class="field-error">Please enter a valid email address.</span>
+      </div>
+      <div class="form-group" id="grp-phone">
+        <label for="fphone">Phone number (WhatsApp)</label>
+        <input type="tel" id="fphone" placeholder="078 000 0000" autocomplete="tel">
+        <span class="field-error">Please enter your WhatsApp number.</span>
+      </div>
+      <div class="form-group" id="grp-tickets">
+        <label for="ftickets">Number of tickets</label>
+        <select id="ftickets">
+          <option value="" disabled selected>Select quantity</option>
+          <option value="1">1 ticket — R150</option>
+          <option value="2">2 tickets — R300</option>
+          <option value="3">3 tickets — R450</option>
+          <option value="4">4 tickets — R600</option>
+          <option value="5">5 tickets — R750</option>
+        </select>
+        <span class="field-error">Please select the number of tickets.</span>
+      </div>
+
+      <div class="total-row" id="totalRow" style="display:none;">
+        <span class="lbl">Total to pay</span>
+        <span class="amt" id="totalAmt">R0</span>
+      </div>
+
+      <button class="btn-proceed" onclick="proceedToPayment()">Proceed to Payment →</button>
       <p class="non-refund">⚠ Tickets are non-refundable once payment is submitted.</p>
     </div>
+  </div>
 
-    <!-- PANEL 2: Banking + Upload -->
-    <div class="form-panel" id="panel-2">
-      <p style="font-size:0.85rem;color:var(--cream-dim);margin-bottom:1.5rem;line-height:1.7;">Please make your EFT payment to the account below, then upload your proof of payment to confirm your registration.</p>
+  <div class="gold-divider" style="margin-top:2rem;"></div>
 
-      <!-- Banking Details -->
-      <div class="banking-hero">
-        <p class="banking-hero-title">EFT banking details — Tyme Bank</p>
-        <div class="banking-grid">
-          <div class="banking-item">
-            <label>Account name</label>
-            <div class="banking-value">NL Hlatshwayo</div>
-          </div>
-          <div class="banking-item">
+  <footer>
+    <p class="footer-brand">Let My Worship Rise</p>
+    <div class="footer-contact">
+      <span>📍 House of Liberty Christ First Ministry</span>
+      <a href="tel:0826887949">082 688 7949</a>
+      <a href="tel:0780946174">078 094 6174</a>
+      <a href="https://wa.me/27780946174">WhatsApp us</a>
+      <a href="mailto:letmyworshiprise@gmail.com">letmyworshiprise@gmail.com</a>
+    </div>
+    <div class="footer-social">
+      <a href="#" title="Instagram">IG</a>
+      <a href="#" title="Facebook">FB</a>
+      <a href="#" title="YouTube">YT</a>
+    </div>
+    <p class="footer-copy">© Let My Worship Rise 2026. All rights reserved.</p>
+  </footer>
+
+</div><!-- end main-site -->
+
+
+<!-- ===== PAGE 2: PAYMENT PAGE ===== -->
+<div id="payment-page" class="page">
+  <div class="payment-page">
+    <div class="payment-inner">
+
+      <button class="payment-back" onclick="goBack()">Back to registration</button>
+
+      <h2 class="payment-heading">Make your <em>payment</em></h2>
+      <p class="payment-sub">Please EFT the amount below to our Tyme Bank account, then upload your proof of payment to confirm your seat.</p>
+
+      <!-- Who's paying summary -->
+      <div class="summary-card">
+        <div>
+          <div class="summary-name" id="sum-name">—</div>
+          <div class="summary-meta" id="sum-meta">—</div>
+        </div>
+        <div class="summary-amount" id="sum-amount">R—</div>
+      </div>
+
+      <!-- Banking details -->
+      <div class="banking-card">
+        <p class="banking-card-title">EFT banking details</p>
+        <div class="banking-fields">
+          <div class="bfield">
             <label>Bank</label>
-            <div class="banking-value">Tyme Bank</div>
+            <div class="bval">Tyme Bank</div>
           </div>
-          <div class="banking-item">
+          <div class="bfield">
+            <label>Account name</label>
+            <div class="bval">NL Hlatshwayo</div>
+          </div>
+          <div class="bfield">
             <label>Account number</label>
-            <div class="banking-value big">51009293310</div>
+            <div class="bval large">51009293310</div>
           </div>
-          <div class="banking-item">
+          <div class="bfield">
             <label>Account type</label>
-            <div class="banking-value">Current / Cheque</div>
+            <div class="bval">Current / Cheque</div>
           </div>
         </div>
-        <div class="ref-box">
-          <p>Use as your payment reference: <span id="refDisplay">Your name + FINALLY</span></p>
+        <div class="ref-strip">
+          <span>Your payment reference</span>
+          <span id="payRef">—</span>
         </div>
       </div>
 
-      <!-- Amount due -->
-      <div class="amount-due">
-        <span>Amount due</span>
-        <span id="amountDue">R150</span>
+      <!-- Upload proof -->
+      <span class="upload-label">Upload proof of payment</span>
+      <div class="upload-area" id="uploadArea">
+        <input type="file" id="fproof" accept="image/*,.pdf" onchange="handleFileSelect(this)">
+        <div class="upload-icon">📎</div>
+        <p class="upload-text">Tap here to upload your proof of payment<br><strong>Screenshot, photo or PDF from your banking app</strong></p>
       </div>
+      <p class="upload-chosen" id="chosenFile"></p>
+      <p class="upload-error" id="uploadError">Please upload your proof of payment before submitting.</p>
 
-      <!-- Proof of payment upload -->
-      <p class="upload-instruction">Once you've made the EFT, upload your proof of payment below (screenshot or PDF from your banking app).</p>
+      <button class="btn-submit" id="submitBtn" onclick="submitRegistration()">Submit Registration →</button>
+      <p class="non-refund">⚠ Tickets are non-refundable once submitted.</p>
 
-      <div class="file-upload-box" id="uploadBox">
-        <input type="file" id="fproof" accept="image/*,.pdf" onchange="handleFile(this)">
-        <div class="file-upload-icon">📎</div>
-        <p class="file-upload-text">Tap to upload proof of payment<br><strong>JPG, PNG or PDF accepted</strong></p>
-        <p class="file-name" id="fileName"></p>
-      </div>
-
-      <div id="grp-proof" style="margin-top:0.5rem;">
-        <span class="field-error" id="proof-error" style="display:none;font-size:0.72rem;color:#e07070;">Please upload your proof of payment.</span>
-      </div>
-
-      <br>
-      <button class="btn-solid" onclick="submitRegistration()" id="submitBtn">Submit Registration →</button>
-      <button class="btn-outline" onclick="goBack()">← Back to details</button>
-      <p class="non-refund">⚠ Tickets are non-refundable once payment is submitted.</p>
     </div>
+  </div>
+</div><!-- end payment-page -->
 
-    <!-- PANEL 3: Success -->
-    <div class="form-panel" id="panel-3">
-      <div class="success-wrap">
-        <div class="success-icon">🕊</div>
-        <h3 class="success-heading">You're registered!</h3>
-        <p class="success-body">Your registration has been received. We'll verify your payment and confirm your seat via WhatsApp or email within 24 hours.</p>
-        <div class="success-details" id="successDetails"></div>
-        <p style="margin-top:1.5rem;font-size:0.82rem;color:var(--cream-dim);">Questions? WhatsApp us on <a href="https://wa.me/27780946174" style="color:var(--gold);text-decoration:none;">078 094 6174</a></p>
-      </div>
+
+<!-- ===== PAGE 3: SUCCESS ===== -->
+<div id="success-page" class="page">
+  <div class="success-page">
+    <div class="success-inner">
+      <div class="success-flame">🕯️</div>
+      <h2 class="success-title">You're registered!</h2>
+      <p class="success-msg">Your registration and proof of payment have been received. We'll verify your payment and confirm your seat via WhatsApp or email within 24 hours. We look forward to worshipping with you!</p>
+      <div class="success-summary" id="successSummary"></div>
+      <a href="https://wa.me/27780946174" class="success-whatsapp">WhatsApp us if you have questions</a>
     </div>
-
   </div>
-</div>
+</div><!-- end success-page -->
 
-<div class="gold-divider" style="margin-top:2rem;"></div>
-
-<!-- FOOTER -->
-<footer>
-  <p class="footer-brand">Let My Worship Rise</p>
-  <div class="footer-contact">
-    <span>📍 House of Liberty Christ First Ministry</span>
-    <a href="tel:0826887949">082 688 7949</a>
-    <a href="tel:0780946174">078 094 6174</a>
-    <a href="https://wa.me/27780946174">WhatsApp us</a>
-    <a href="mailto:letmyworshiprise@gmail.com">letmyworshiprise@gmail.com</a>
-  </div>
-  <div class="footer-social">
-    <a href="#" title="Instagram">IG</a>
-    <a href="#" title="Facebook">FB</a>
-    <a href="#" title="YouTube">YT</a>
-  </div>
-  <p class="footer-copy">© Let My Worship Rise 2026. All rights reserved.</p>
-</footer>
 
 <script>
-  // State
-  let userData = {};
+  let reg = {};
 
-  // Update total on ticket select
+  // Show total when tickets selected
   document.getElementById('ftickets').addEventListener('change', function() {
     const qty = parseInt(this.value) || 0;
-    const display = document.getElementById('totalDisplay');
+    const row = document.getElementById('totalRow');
     if (qty > 0) {
-      display.style.display = 'flex';
-      document.getElementById('totalAmount').textContent = 'R' + (qty * 150).toLocaleString();
+      row.style.display = 'flex';
+      document.getElementById('totalAmt').textContent = 'R' + (qty * 150).toLocaleString();
     }
   });
 
-  function handleFile(input) {
-    const file = input.files[0];
-    if (file) {
-      const el = document.getElementById('fileName');
-      el.textContent = '✓ ' + file.name;
-      el.style.display = 'block';
-      document.getElementById('proof-error').style.display = 'none';
-    }
-  }
-
-  function validateStep1() {
-    const name = document.getElementById('fname').value.trim();
-    const email = document.getElementById('femail').value.trim();
-    const phone = document.getElementById('fphone').value.trim();
+  function proceedToPayment() {
+    const name    = document.getElementById('fname').value.trim();
+    const email   = document.getElementById('femail').value.trim();
+    const phone   = document.getElementById('fphone').value.trim();
     const tickets = document.getElementById('ftickets').value;
-    let valid = true;
 
-    document.getElementById('grp-name').classList.toggle('has-error', !name);
-    document.getElementById('grp-email').classList.toggle('has-error', !email || !email.includes('@'));
-    document.getElementById('grp-phone').classList.toggle('has-error', !phone);
-    document.getElementById('grp-tickets').classList.toggle('has-error', !tickets);
+    // Validate
+    let ok = true;
+    toggle('grp-name',    !name);
+    toggle('grp-email',   !email || !email.includes('@'));
+    toggle('grp-phone',   !phone);
+    toggle('grp-tickets', !tickets);
+    if (!name || !email || !email.includes('@') || !phone || !tickets) return;
 
-    if (!name || !email || !email.includes('@') || !phone || !tickets) valid = false;
-    return valid;
-  }
-
-  function goToPayment() {
-    if (!validateStep1()) return;
-
-    const name = document.getElementById('fname').value.trim();
-    const tickets = parseInt(document.getElementById('ftickets').value);
-    const amount = tickets * 150;
-
-    userData = {
-      name: name,
-      email: document.getElementById('femail').value.trim(),
-      phone: document.getElementById('fphone').value.trim(),
-      tickets: tickets,
-      amount: amount,
-      reference: name.split(' ')[0].toUpperCase() + '-FINALLY'
+    // Store
+    reg = {
+      name, email, phone,
+      tickets: parseInt(tickets),
+      amount: parseInt(tickets) * 150,
+      ref: name.split(' ')[0].toUpperCase() + '-FINALLY-' + Date.now().toString().slice(-4)
     };
 
-    // Update panel 2 with their info
-    document.getElementById('refDisplay').textContent = userData.reference;
-    document.getElementById('amountDue').textContent = 'R' + amount.toLocaleString();
+    // Populate payment page
+    document.getElementById('sum-name').textContent   = reg.name;
+    document.getElementById('sum-meta').textContent   = reg.tickets + (reg.tickets===1?' ticket':' tickets') + ' · ' + reg.email;
+    document.getElementById('sum-amount').textContent = 'R' + reg.amount.toLocaleString();
+    document.getElementById('payRef').textContent      = reg.ref;
 
-    showPanel(2);
-    document.getElementById('register').scrollIntoView({ behavior: 'smooth' });
+    showPage('payment-page');
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   }
 
   function goBack() {
-    showPanel(1);
-    document.getElementById('register').scrollIntoView({ behavior: 'smooth' });
+    showPage('main-site');
+    setTimeout(() => document.getElementById('register').scrollIntoView({ behavior: 'smooth' }), 100);
+  }
+
+  function handleFileSelect(input) {
+    if (input.files && input.files[0]) {
+      const el = document.getElementById('chosenFile');
+      el.textContent = '✓ ' + input.files[0].name;
+      el.style.display = 'block';
+      document.getElementById('uploadError').style.display = 'none';
+    }
   }
 
   function submitRegistration() {
     const proof = document.getElementById('fproof');
     if (!proof.files || proof.files.length === 0) {
-      document.getElementById('proof-error').style.display = 'block';
+      document.getElementById('uploadError').style.display = 'block';
       return;
     }
 
@@ -551,61 +508,61 @@
     btn.disabled = true;
     btn.textContent = 'Submitting...';
 
-    // Submit to Netlify Forms with file
-    const formData = new FormData();
-    formData.append('form-name', 'worship-registration');
-    formData.append('fullname', userData.name);
-    formData.append('email', userData.email);
-    formData.append('phone', userData.phone);
-    formData.append('tickets', userData.tickets + ' ticket(s)');
-    formData.append('amount', 'R' + userData.amount);
-    formData.append('reference', userData.reference);
-    formData.append('proof_of_payment', proof.files[0]);
+    // Submit to Netlify Forms
+    const fd = new FormData();
+    fd.append('form-name',        'worship-registration');
+    fd.append('fullname',         reg.name);
+    fd.append('email',            reg.email);
+    fd.append('phone',            reg.phone);
+    fd.append('tickets',          reg.tickets + ' ticket(s)');
+    fd.append('amount',           'R' + reg.amount);
+    fd.append('reference',        reg.ref);
+    fd.append('proof_of_payment', proof.files[0]);
 
-    fetch('/', { method: 'POST', body: formData })
-      .then(() => {
-        showSuccess();
-      })
-      .catch(() => {
-        // Even if fetch fails, show success — Netlify may still capture it
-        showSuccess();
-      });
+    fetch('/', { method: 'POST', body: fd })
+      .finally(() => showSuccess());
   }
 
   function showSuccess() {
-    showPanel(3);
-    document.getElementById('successDetails').innerHTML =
-      '<p>Name: <span>' + userData.name + '</span></p>' +
-      '<p>Email: <span>' + userData.email + '</span></p>' +
-      '<p>WhatsApp: <span>' + userData.phone + '</span></p>' +
-      '<p>Tickets: <span>' + userData.tickets + (userData.tickets === 1 ? ' ticket' : ' tickets') + '</span></p>' +
-      '<p>Amount paid: <span>R' + userData.amount + '</span></p>' +
-      '<p>Reference used: <span>' + userData.reference + '</span></p>';
-    document.getElementById('register').scrollIntoView({ behavior: 'smooth' });
+    document.getElementById('successSummary').innerHTML =
+      row('Name',      reg.name) +
+      row('Email',     reg.email) +
+      row('WhatsApp',  reg.phone) +
+      row('Tickets',   reg.tickets + (reg.tickets===1?' ticket':' tickets')) +
+      row('Amount',    'R' + reg.amount) +
+      row('Reference', reg.ref);
+    showPage('success-page');
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   }
 
-  function showPanel(num) {
-    [1, 2, 3].forEach(n => {
-      document.getElementById('panel-' + n).classList.toggle('active', n === num);
-      const prog = document.getElementById('prog-' + n);
-      prog.classList.remove('active', 'done');
-      if (n === num) prog.classList.add('active');
-      if (n < num) prog.classList.add('done');
+  function row(label, val) {
+    return '<p>' + label + '<span>' + val + '</span></p>';
+  }
+
+  function toggle(id, hasError) {
+    document.getElementById(id).classList.toggle('has-error', hasError);
+  }
+
+  function showPage(id) {
+    ['main-site','payment-page','success-page'].forEach(p => {
+      document.getElementById(p).classList.toggle('active', p === id);
     });
   }
 
-  // Nav highlight
-  const navLinks = document.querySelectorAll('.nav-links a');
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(e => {
-      if (e.isIntersecting) {
-        navLinks.forEach(a => {
-          a.style.color = a.getAttribute('href') === '#' + e.target.id ? 'var(--gold)' : '';
-        });
+  // Nav smooth scroll
+  document.querySelectorAll('.nav-links a').forEach(a => {
+    a.addEventListener('click', e => {
+      const href = a.getAttribute('href');
+      if (href.startsWith('#')) {
+        e.preventDefault();
+        showPage('main-site');
+        setTimeout(() => {
+          const el = document.getElementById(href.slice(1));
+          if (el) el.scrollIntoView({ behavior: 'smooth' });
+        }, 100);
       }
     });
-  }, { threshold: 0.35 });
-  document.querySelectorAll('[id]').forEach(s => observer.observe(s));
+  });
 </script>
 
 </body>
