@@ -65,8 +65,8 @@
   .scripture-block cite { display: block; margin-top: .5rem; font-size: .78rem; letter-spacing: .12em; color: var(--gold); font-style: normal; }
 
   .speaker-card { display: flex; gap: 2.5rem; align-items: flex-start; background: var(--navy-mid); border: .5px solid var(--divider); padding: 2rem; }
-  .speaker-photo { flex-shrink: 0; width: 180px; height: 220px; background: var(--navy-light); border: 1px solid var(--divider); display: flex; align-items: center; justify-content: center; color: rgba(201,168,76,.35); font-size: .68rem; text-align: center; overflow: hidden; }
-  .speaker-photo img { width: 100%; height: 100%; object-fit: cover; }
+  .speaker-photo { flex-shrink: 0; width: 180px; height: 220px; object-position: top; background: var(--navy-light); border: 1px solid var(--divider); display: flex; align-items: center; justify-content: center; color: rgba(201,168,76,.35); font-size: .68rem; text-align: center; overflow: hidden; }
+  .speaker-photo img { width: 100%; height: 100%; object-fit: cover; object-position: top center; }
   .speaker-name { font-family: 'Cormorant Garamond', serif; font-size: 1.6rem; font-weight: 400; color: var(--cream); margin-bottom: .2rem; }
   .speaker-role { font-size: .7rem; letter-spacing: .2em; text-transform: uppercase; color: var(--gold); margin-bottom: 1rem; }
   .speaker-bio { font-size: .92rem; color: var(--cream-dim); line-height: 1.85; }
@@ -181,7 +181,7 @@
   @media(max-width:640px){
     .nav-links{display:none}
     .speaker-card{flex-direction:column}
-    .speaker-photo{width:100%;height:200px}
+    .speaker-photo{width:100%;height:320px}
     .section-wrap{padding:3.5rem 1.25rem}
     .reg-form-wrap{padding:1.5rem}
     .banking-fields{grid-template-columns:1fr}
@@ -241,6 +241,9 @@
         <span><span class="dot"></span>Tickets R150</span>
       </div>
       <a href="#register" class="btn-gold">Secure Your Seat</a>
+    <div style="margin-top:1rem;">
+      <a href="#register" onclick="showTicketDirect()" style="display:inline-block; padding:1rem 2.8rem; background:var(--gold); color:var(--navy); font-family:'Inter',sans-serif; font-size:0.76rem; font-weight:500; letter-spacing:0.22em; text-transform:uppercase; text-decoration:none; transition:background 0.2s, box-shadow 0.2s;" onmouseover="this.style.boxShadow='0 0 22px rgba(201,168,76,0.5)'" onmouseout="this.style.boxShadow='none'">🎟 Purchase Your Ticket</a>
+    </div>
     </div>
   </div>
 
@@ -288,6 +291,10 @@
         <li>Entry to House of Liberty Christ First Ministry</li>
         <li>Live worship with Pastor Comfort Makhadi</li>
       </ul>
+      <div style="margin-top:1.75rem; padding-top:1.5rem; border-top:0.5px solid rgba(201,168,76,0.18);">
+        <a href="#register" style="display:inline-block; padding:0.95rem 2.5rem; background:var(--gold); color:var(--navy); font-family:'Inter',sans-serif; font-size:0.78rem; font-weight:500; letter-spacing:0.18em; text-transform:uppercase; text-decoration:none; transition:background 0.2s, box-shadow 0.2s; margin-bottom:0.75rem;" onmouseover="this.style.background='#DFC07A'" onmouseout="this.style.background='#C9A84C'">Purchase Ticket →</a>
+        <p style="font-size:0.75rem; color:var(--cream-dim); margin-top:0.5rem;">Secure payment via EFT · Confirmation within 24hrs</p>
+      </div>
     </div>
   </div>
 
@@ -448,7 +455,41 @@
       </div>
 
       <!-- Upload proof -->
-      <span class="upload-label">Upload proof of payment</span>
+      <!-- INSTRUCTION BOX -->
+      <div style="background:rgba(201,168,76,0.08); border:1px solid rgba(201,168,76,0.5); padding:1.5rem; margin-bottom:1.75rem; position:relative;">
+        <div style="display:flex; align-items:center; gap:0.75rem; margin-bottom:1rem;">
+          <span style="font-size:1.4rem;">📋</span>
+          <p style="font-size:0.72rem; font-weight:500; letter-spacing:0.18em; text-transform:uppercase; color:var(--gold);">What to do next — please read</p>
+        </div>
+        <div style="display:flex; flex-direction:column; gap:0.85rem;">
+          <div style="display:flex; gap:0.85rem; align-items:flex-start;">
+            <span style="background:var(--gold); color:var(--navy); font-family:'Inter',sans-serif; font-size:0.7rem; font-weight:500; width:22px; height:22px; border-radius:50%; display:flex; align-items:center; justify-content:center; flex-shrink:0; margin-top:2px;">1</span>
+            <p style="font-size:0.88rem; color:var(--cream); line-height:1.65;"><strong style="font-weight:500;">Open your banking app</strong> (Capitec, FNB, Absa, Standard Bank, Nedbank or any other SA bank) and make an EFT payment to the account details shown above.</p>
+          </div>
+          <div style="display:flex; gap:0.85rem; align-items:flex-start;">
+            <span style="background:var(--gold); color:var(--navy); font-family:'Inter',sans-serif; font-size:0.7rem; font-weight:500; width:22px; height:22px; border-radius:50%; display:flex; align-items:center; justify-content:center; flex-shrink:0; margin-top:2px;">2</span>
+            <p style="font-size:0.88rem; color:var(--cream); line-height:1.65;"><strong style="font-weight:500;">Take a screenshot</strong> of your payment confirmation from your banking app. This is your proof of payment.</p>
+          </div>
+          <div style="display:flex; gap:0.85rem; align-items:flex-start;">
+            <span style="background:var(--gold); color:var(--navy); font-family:'Inter',sans-serif; font-size:0.7rem; font-weight:500; width:22px; height:22px; border-radius:50%; display:flex; align-items:center; justify-content:center; flex-shrink:0; margin-top:2px;">3</span>
+            <p style="font-size:0.88rem; color:var(--cream); line-height:1.65;"><strong style="font-weight:500;">Come back to this page</strong> and tap the upload button below to attach your screenshot or PDF. Your ticket is only confirmed once we receive your proof of payment.</p>
+          </div>
+          <div style="display:flex; gap:0.85rem; align-items:flex-start;">
+            <span style="background:var(--gold); color:var(--navy); font-family:'Inter',sans-serif; font-size:0.7rem; font-weight:500; width:22px; height:22px; border-radius:50%; display:flex; align-items:center; justify-content:center; flex-shrink:0; margin-top:2px;">4</span>
+            <p style="font-size:0.88rem; color:var(--cream); line-height:1.65;"><strong style="font-weight:500;">Click Submit Registration</strong> — we will verify your payment and confirm your seat via WhatsApp or email within 24 hours.</p>
+          </div>
+        </div>
+
+        <!-- VOICE NOTE BUTTON -->
+        <div style="margin-top:1.25rem; padding-top:1.25rem; border-top:0.5px solid rgba(201,168,76,0.25); display:flex; align-items:center; gap:1rem; flex-wrap:wrap;">
+          <button id="voiceBtn" onclick="playVoiceOver()" style="display:flex; align-items:center; gap:0.5rem; padding:0.65rem 1.25rem; background:transparent; border:0.5px solid var(--gold); color:var(--gold); font-family:'Inter',sans-serif; font-size:0.72rem; letter-spacing:0.12em; text-transform:uppercase; cursor:pointer; transition:background 0.2s, color 0.2s; border-radius:0;">
+            <span id="voiceIcon">🔊</span> <span id="voiceText">Hear these instructions</span>
+          </button>
+          <p style="font-size:0.75rem; color:var(--cream-dim); font-style:italic;">Tap to listen to these steps read aloud</p>
+        </div>
+      </div>
+
+      <span class="upload-label">Step 3 — Upload your proof of payment here</span>
       <div class="upload-area" id="uploadArea">
         <input type="file" id="fproof" accept="image/*,.pdf" onchange="handleFileSelect(this)">
         <div class="upload-icon">📎</div>
@@ -589,6 +630,69 @@
       document.getElementById(p).classList.toggle('active', p === id);
     });
   }
+
+  // Show ticket page directly from hero button
+  function showTicketDirect() {
+    setTimeout(() => {
+      document.getElementById('register').scrollIntoView({ behavior: 'smooth' });
+    }, 100);
+  }
+
+  // Voice over using Web Speech API
+  let speaking = false;
+  let utterance = null;
+  function playVoiceOver() {
+    if (!'speechSynthesis' in window) {
+      alert('Sorry, your browser does not support audio. Please read the steps above.');
+      return;
+    }
+    if (speaking) {
+      window.speechSynthesis.cancel();
+      speaking = false;
+      document.getElementById('voiceIcon').textContent = '🔊';
+      document.getElementById('voiceText').textContent = 'Hear these instructions';
+      return;
+    }
+    const name = document.getElementById('sum-name').textContent || 'friend';
+    const amount = document.getElementById('sum-amount').textContent || 'R150';
+    const ref = document.getElementById('payRef').textContent || '';
+    const msg = `Hello ${name}! Here is what you need to do to finalize your ticket purchase.
+Step 1. Open your banking app — this can be Capitec, FNB, Absa, Standard Bank, Nedbank, or any South African bank app on your phone.
+Step 2. Make an EFT payment of ${amount} to the Tyme Bank account shown on this page. The account name is N L Hlatshwayo, and the account number is 5 1 0 0 9 2 9 3 3 1 0. Please use ${ref} as your payment reference.
+Step 3. Once you have paid, take a screenshot of your payment confirmation from your banking app.
+Step 4. Come back to this page and tap the upload button to attach your screenshot. This is your proof of payment.
+Step 5. Click Submit Registration. We will check your payment and confirm your seat by WhatsApp or email within 24 hours.
+That is all! Thank you, and we look forward to worshipping with you on 30 October 2026.`;
+
+    utterance = new SpeechSynthesisUtterance(msg);
+    utterance.lang = 'en-ZA';
+    utterance.rate = 0.92;
+    utterance.pitch = 1.05;
+
+    // Try to find a South African or female English voice
+    const voices = window.speechSynthesis.getVoices();
+    const preferred = voices.find(v => v.lang === 'en-ZA') ||
+                      voices.find(v => v.lang === 'en-GB' && v.name.toLowerCase().includes('female')) ||
+                      voices.find(v => v.lang.startsWith('en'));
+    if (preferred) utterance.voice = preferred;
+
+    utterance.onstart = () => {
+      speaking = true;
+      document.getElementById('voiceIcon').textContent = '⏹';
+      document.getElementById('voiceText').textContent = 'Stop audio';
+    };
+    utterance.onend = utterance.onerror = () => {
+      speaking = false;
+      document.getElementById('voiceIcon').textContent = '🔊';
+      document.getElementById('voiceText').textContent = 'Hear these instructions';
+    };
+
+    window.speechSynthesis.cancel();
+    window.speechSynthesis.speak(utterance);
+  }
+
+  // Pre-load voices
+  window.speechSynthesis.onvoiceschanged = () => { window.speechSynthesis.getVoices(); };
 
   // Nav smooth scroll
   document.querySelectorAll('.nav-links a').forEach(a => {
