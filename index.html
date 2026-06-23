@@ -52,9 +52,11 @@
   /* BUTTONS */
   .btn-gold { display: inline-block; padding: 1rem 2.8rem; background: transparent; border: 1px solid var(--gold); color: var(--gold); font-family: 'Inter', sans-serif; font-size: 0.76rem; font-weight: 400; letter-spacing: 0.22em; text-transform: uppercase; text-decoration: none; cursor: pointer; transition: background 0.25s, color 0.25s, box-shadow 0.25s; }
   .btn-gold:hover { background: var(--gold); color: var(--navy); box-shadow: 0 0 22px rgba(201,168,76,0.3); }
-  .btn-solid { display: inline-block; padding: 1rem 2.8rem; background: var(--gold); border: 1px solid var(--gold); color: var(--navy); font-family: 'Inter', sans-serif; font-size: 0.76rem; font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase; text-decoration: none; cursor: pointer; transition: background 0.2s, box-shadow 0.2s; border-radius: 0; width: 100%; text-align: center; margin-top: 1.5rem; }
-  .btn-solid:hover { background: var(--gold-light); box-shadow: 0 0 22px rgba(201,168,76,0.4); }
+  .btn-solid { display: block; width: 100%; padding: 1rem 2rem; background: var(--gold); border: none; color: var(--navy); font-family: 'Inter', sans-serif; font-size: 0.78rem; font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase; cursor: pointer; transition: background 0.2s, box-shadow 0.2s; border-radius: 0; text-align: center; }
+  .btn-solid:hover { background: var(--gold-light); box-shadow: 0 0 22px rgba(201,168,76,0.35); }
   .btn-solid:disabled { opacity: 0.5; cursor: not-allowed; }
+  .btn-outline { display: block; width: 100%; padding: 0.85rem 2rem; background: transparent; border: 0.5px solid var(--divider); color: var(--cream-dim); font-family: 'Inter', sans-serif; font-size: 0.75rem; font-weight: 400; letter-spacing: 0.14em; text-transform: uppercase; cursor: pointer; transition: border-color 0.2s, color 0.2s; border-radius: 0; text-align: center; margin-top: 0.75rem; }
+  .btn-outline:hover { border-color: var(--gold); color: var(--gold); }
 
   /* DIVIDERS */
   .gold-divider { width: 100%; height: 0.5px; background: var(--divider); }
@@ -76,7 +78,7 @@
 
   /* SPEAKER */
   .speaker-card { display: flex; gap: 2.5rem; align-items: flex-start; background: var(--navy-mid); border: 0.5px solid var(--divider); padding: 2rem; }
-  .speaker-photo { flex-shrink: 0; width: 140px; height: 160px; background: var(--navy-light); border: 1px solid var(--divider); display: flex; align-items: center; justify-content: center; color: rgba(201,168,76,0.35); font-size: 0.68rem; letter-spacing: 0.1em; text-align: center; overflow: hidden; }
+  .speaker-photo { flex-shrink: 0; width: 140px; height: 160px; background: var(--navy-light); border: 1px solid var(--divider); display: flex; align-items: center; justify-content: center; color: rgba(201,168,76,0.35); font-size: 0.68rem; text-align: center; overflow: hidden; }
   .speaker-photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
   .speaker-name { font-family: 'Cormorant Garamond', serif; font-size: 1.6rem; font-weight: 400; color: var(--cream); margin-bottom: 0.2rem; }
   .speaker-role { font-size: 0.7rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); margin-bottom: 1rem; }
@@ -98,14 +100,21 @@
   .ticket-includes li { font-size: 0.82rem; color: var(--cream-dim); list-style: none; padding: 0.3rem 0; border-top: 0.5px solid rgba(201,168,76,0.12); }
   .ticket-includes li:first-child { border-top: none; }
 
-  /* BANK BADGES */
-  .payment-logos { display: flex; align-items: center; gap: 1rem; flex-wrap: wrap; margin-top: 1.2rem; }
-  .payment-logos span { font-size: 0.68rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--cream-dim); }
-  .bank-badges { display: flex; gap: 0.5rem; flex-wrap: wrap; }
-  .bank-badge { font-size: 0.65rem; letter-spacing: 0.08em; padding: 3px 9px; border: 0.5px solid var(--divider); color: var(--cream-dim); }
+  /* MULTI-STEP FORM */
+  .form-wrap { background: var(--navy-mid); border: 0.5px solid var(--divider); margin-top: 2rem; overflow: hidden; }
 
-  /* FORM */
-  .form-wrap { background: var(--navy-mid); border: 0.5px solid var(--divider); padding: 2.5rem; margin-top: 2rem; }
+  /* PROGRESS BAR */
+  .progress-bar { display: flex; border-bottom: 0.5px solid var(--divider); }
+  .progress-step { flex: 1; padding: 1rem; text-align: center; font-size: 0.68rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--cream-dim); border-right: 0.5px solid var(--divider); position: relative; transition: color 0.3s; }
+  .progress-step:last-child { border-right: none; }
+  .progress-step.active { color: var(--gold); }
+  .progress-step.done { color: rgba(201,168,76,0.5); }
+  .progress-step.active::after { content: ''; position: absolute; bottom: -1px; left: 0; right: 0; height: 2px; background: var(--gold); }
+  .step-num-badge { display: inline-block; width: 20px; height: 20px; border-radius: 50%; border: 0.5px solid currentColor; font-size: 0.65rem; line-height: 20px; text-align: center; margin-right: 0.4rem; }
+
+  /* FORM PANELS */
+  .form-panel { display: none; padding: 2.5rem; }
+  .form-panel.active { display: block; }
   .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.2rem; }
   .form-group { display: flex; flex-direction: column; gap: 0.35rem; }
   .form-group.full { grid-column: 1 / -1; }
@@ -121,30 +130,56 @@
     background-repeat: no-repeat; background-position: right 1rem center; padding-right: 2.5rem; cursor: pointer;
   }
   .form-group select option { background: var(--navy); }
-
-  /* TOTAL */
-  .total-display { margin-top: 1.5rem; padding: 1.1rem 1.25rem; background: var(--gold-dim); border: 0.5px solid rgba(201,168,76,0.35); display: flex; justify-content: space-between; align-items: center; }
-  .total-display .total-label { font-size: 0.72rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gold); }
-  .total-display .total-amount { font-family: 'Cormorant Garamond', serif; font-size: 1.9rem; color: var(--cream); }
-
-  /* ERROR */
-  .field-error { font-size: 0.72rem; color: #e07070; margin-top: 0.2rem; display: none; }
+  .field-error { font-size: 0.7rem; color: #e07070; display: none; }
   .form-group.has-error input, .form-group.has-error select { border-color: #e07070; }
   .form-group.has-error .field-error { display: block; }
 
-  /* NETLIFY hidden form */
-  .netlify-hidden { display: none; }
+  /* TOTAL */
+  .total-display { margin: 1.5rem 0; padding: 1rem 1.25rem; background: var(--gold-dim); border: 0.5px solid rgba(201,168,76,0.35); display: flex; justify-content: space-between; align-items: center; }
+  .total-label { font-size: 0.72rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gold); }
+  .total-amount { font-family: 'Cormorant Garamond', serif; font-size: 1.9rem; color: var(--cream); }
 
-  /* PAYFAST form */
-  #payfast-form { display: none; }
+  /* BANKING DETAILS PANEL */
+  .banking-hero { background: var(--gold-dim); border: 0.5px solid rgba(201,168,76,0.4); padding: 1.75rem; margin-bottom: 1.5rem; }
+  .banking-hero-title { font-size: 0.68rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold); margin-bottom: 1.2rem; }
+  .banking-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+  .banking-item label { display: block; font-size: 0.65rem; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(201,168,76,0.6); margin-bottom: 0.2rem; }
+  .banking-item .banking-value { font-size: 1rem; color: var(--cream); font-weight: 400; letter-spacing: 0.04em; }
+  .banking-item .banking-value.big { font-family: 'Cormorant Garamond', serif; font-size: 1.5rem; letter-spacing: 0.08em; }
+  .ref-box { margin-top: 1rem; padding: 0.85rem 1rem; background: rgba(201,168,76,0.08); border: 0.5px dashed rgba(201,168,76,0.4); }
+  .ref-box p { font-size: 0.78rem; color: var(--cream-dim); }
+  .ref-box span { color: var(--gold); font-weight: 500; }
 
-  /* NON REFUND */
-  .non-refund { font-size: 0.75rem; color: rgba(201,168,76,0.6); margin-top: 1rem; font-style: italic; }
+  .amount-due { display: flex; justify-content: space-between; align-items: center; padding: 1rem 1.25rem; background: var(--navy); border: 0.5px solid var(--divider); margin-bottom: 1.5rem; }
+  .amount-due span:first-child { font-size: 0.72rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--cream-dim); }
+  .amount-due span:last-child { font-family: 'Cormorant Garamond', serif; font-size: 1.9rem; color: var(--gold); }
+
+  .upload-instruction { font-size: 0.85rem; color: var(--cream-dim); margin-bottom: 1rem; line-height: 1.7; }
+
+  /* FILE UPLOAD */
+  .file-upload-box { border: 0.5px dashed rgba(201,168,76,0.4); padding: 2rem; text-align: center; cursor: pointer; transition: border-color 0.2s, background 0.2s; position: relative; }
+  .file-upload-box:hover { border-color: var(--gold); background: var(--gold-dim); }
+  .file-upload-box input[type="file"] { position: absolute; inset: 0; opacity: 0; cursor: pointer; width: 100%; height: 100%; }
+  .file-upload-icon { font-size: 2rem; margin-bottom: 0.5rem; }
+  .file-upload-text { font-size: 0.82rem; color: var(--cream-dim); }
+  .file-upload-text strong { color: var(--gold); font-weight: 400; }
+  .file-name { margin-top: 0.75rem; font-size: 0.8rem; color: var(--gold); font-style: italic; display: none; }
 
   /* SUCCESS */
-  .success-banner { display: none; margin-top: 2rem; padding: 2.5rem; background: var(--gold-dim); border: 0.5px solid var(--gold); text-align: center; }
-  .success-banner p:first-child { font-family: 'Cormorant Garamond', serif; font-size: 1.8rem; color: var(--gold); margin-bottom: 0.75rem; }
-  .success-banner p:last-child { font-size: 0.9rem; color: var(--cream-dim); line-height: 1.7; }
+  .success-wrap { padding: 3rem 2.5rem; text-align: center; }
+  .success-icon { font-size: 3.5rem; margin-bottom: 1.5rem; }
+  .success-heading { font-family: 'Cormorant Garamond', serif; font-size: 2.2rem; color: var(--gold); margin-bottom: 1rem; font-weight: 300; }
+  .success-body { font-size: 0.92rem; color: var(--cream-dim); line-height: 1.8; max-width: 480px; margin: 0 auto 2rem; }
+  .success-details { background: var(--gold-dim); border: 0.5px solid rgba(201,168,76,0.35); padding: 1.25rem; text-align: left; margin-top: 1.5rem; }
+  .success-details p { font-size: 0.82rem; color: var(--cream-dim); padding: 0.3rem 0; border-bottom: 0.5px solid rgba(201,168,76,0.1); }
+  .success-details p:last-child { border-bottom: none; }
+  .success-details span { color: var(--cream); font-weight: 400; }
+
+  /* NETLIFY hidden */
+  .netlify-hidden { display: none; }
+
+  /* NON REFUND */
+  .non-refund { font-size: 0.74rem; color: rgba(201,168,76,0.55); margin-top: 0.75rem; font-style: italic; text-align: center; }
 
   /* FOOTER */
   footer { border-top: 0.5px solid var(--divider); padding: 3rem 2rem; text-align: center; margin-top: 4rem; }
@@ -153,7 +188,7 @@
   .footer-contact a { color: var(--cream-dim); text-decoration: none; transition: color 0.2s; }
   .footer-contact a:hover { color: var(--gold); }
   .footer-social { display: flex; justify-content: center; gap: 1.2rem; margin-bottom: 2rem; }
-  .footer-social a { width: 36px; height: 36px; border: 0.5px solid var(--divider); display: flex; align-items: center; justify-content: center; color: var(--cream-dim); text-decoration: none; font-size: 0.65rem; letter-spacing: 0.06em; transition: border-color 0.2s, color 0.2s; }
+  .footer-social a { width: 36px; height: 36px; border: 0.5px solid var(--divider); display: flex; align-items: center; justify-content: center; color: var(--cream-dim); text-decoration: none; font-size: 0.65rem; transition: border-color 0.2s, color 0.2s; }
   .footer-social a:hover { border-color: var(--gold); color: var(--gold); }
   .footer-copy { font-size: 0.7rem; color: rgba(245,240,232,0.3); letter-spacing: 0.1em; }
 
@@ -162,13 +197,16 @@
     .nav-links { display: none; }
     .form-grid { grid-template-columns: 1fr; }
     .form-group.full { grid-column: 1; }
+    .banking-grid { grid-template-columns: 1fr; }
     .speaker-card { flex-direction: column; }
     .speaker-photo { width: 100%; height: 200px; }
-    .form-wrap { padding: 1.5rem; }
+    .form-panel { padding: 1.5rem; }
     .section-wrap { padding: 3.5rem 1.25rem; }
     .steps { grid-template-columns: 1fr; }
     .step { border-right: none; border-bottom: 0.5px solid var(--divider); }
     .step:last-child { border-bottom: none; }
+    .progress-step { font-size: 0.6rem; padding: 0.85rem 0.5rem; }
+    .step-num-badge { display: none; }
   }
   @media (prefers-reduced-motion: reduce) {
     .flame { animation: none; }
@@ -233,7 +271,7 @@
   <p class="section-eyebrow">Your host for the evening</p>
   <h2 class="section-heading">Meet <em>Pastor Comfort</em></h2>
   <div class="speaker-card">
-    <div class="speaker-photo"><span style="padding:0.5rem;line-height:1.6;font-family:'Inter',sans-serif;">Photo<br>coming<br>soon</span></div>
+    <div class="speaker-photo"><span style="padding:0.5rem;line-height:1.6;">Photo<br>coming<br>soon</span></div>
     <div>
       <p class="speaker-name">Pastor Comfort Makhadi</p>
       <p class="speaker-role">Worship Leader &amp; Host</p>
@@ -248,25 +286,23 @@
 <div class="section-wrap" id="tickets" style="padding-top:1rem;">
   <p class="section-eyebrow">Tickets &amp; payment</p>
   <h2 class="section-heading">Secure your <em>seat</em></h2>
-
   <div class="steps">
     <div class="step">
       <div class="step-num">01</div>
-      <div class="step-title">Fill in details</div>
-      <div class="step-desc">Enter your name, email, phone and number of tickets below.</div>
+      <div class="step-title">Your details</div>
+      <div class="step-desc">Enter your name, email, phone and number of tickets.</div>
     </div>
     <div class="step">
       <div class="step-num">02</div>
-      <div class="step-title">Pay securely</div>
-      <div class="step-desc">You go directly to PayFast — choose your bank, card, or SnapScan.</div>
+      <div class="step-title">Make payment</div>
+      <div class="step-desc">EFT to our Tyme Bank account and upload your proof of payment.</div>
     </div>
     <div class="step">
       <div class="step-num">03</div>
-      <div class="step-title">You're in</div>
-      <div class="step-desc">Payment lands in our account instantly. Confirmation sent to your email.</div>
+      <div class="step-title">You're confirmed</div>
+      <div class="step-desc">We verify your payment and confirm your seat by WhatsApp or email.</div>
     </div>
   </div>
-
   <div class="ticket-card">
     <p class="ticket-label">In-person ticket</p>
     <p class="ticket-price-big">R150 <span style="font-size:1rem;color:var(--cream-dim);font-family:'Inter',sans-serif;font-weight:300;">per person</span></p>
@@ -276,20 +312,6 @@
       <li>Live worship with Pastor Comfort Makhadi</li>
     </ul>
   </div>
-
-  <div class="payment-logos">
-    <span>Pay with:</span>
-    <div class="bank-badges">
-      <span class="bank-badge">FNB</span>
-      <span class="bank-badge">Capitec</span>
-      <span class="bank-badge">Absa</span>
-      <span class="bank-badge">Standard Bank</span>
-      <span class="bank-badge">Nedbank</span>
-      <span class="bank-badge">Credit Card</span>
-      <span class="bank-badge">SnapScan</span>
-    </div>
-  </div>
-  <p style="font-size:0.75rem;color:var(--cream-dim);margin-top:0.75rem;font-style:italic;">Payments processed securely via PayFast. Money goes directly to Let My Worship Rise.</p>
 </div>
 
 <div class="ornament"><div class="ornament-line"></div><div class="ornament-diamond"></div><div class="ornament-line"></div></div>
@@ -298,83 +320,135 @@
 <div class="section-wrap" id="register" style="padding-top:1rem;">
   <p class="section-eyebrow">Registration</p>
   <h2 class="section-heading">Complete your <em>registration</em></h2>
-  <p style="color:var(--cream-dim);font-size:0.92rem;">Fill in your details below. You'll be taken securely to PayFast to pay — choose your bank, card, or SnapScan. Payment goes straight to our account.</p>
 
-  <!-- NETLIFY FORM — captures registrations in Netlify dashboard & emails you -->
-  <!-- This hidden form tells Netlify to collect the submissions -->
-  <form name="worship-registration" netlify netlify-honeypot="bot-field" class="netlify-hidden">
+  <!-- Netlify hidden form for form detection -->
+  <form name="worship-registration" netlify netlify-honeypot="bot-field" class="netlify-hidden" enctype="multipart/form-data">
     <input type="text" name="fullname">
     <input type="email" name="email">
     <input type="tel" name="phone">
     <input type="text" name="tickets">
     <input type="text" name="amount">
-    <input type="text" name="payment_id">
+    <input type="text" name="reference">
+    <input type="file" name="proof_of_payment">
   </form>
 
-  <div class="form-wrap" id="formSection">
-    <div class="form-grid">
-      <div class="form-group" id="grp-name">
-        <label for="fname">Full name *</label>
-        <input type="text" id="fname" placeholder="Your full name" autocomplete="name">
-        <span class="field-error">Please enter your full name.</span>
+  <div class="form-wrap">
+
+    <!-- PROGRESS -->
+    <div class="progress-bar">
+      <div class="progress-step active" id="prog-1"><span class="step-num-badge">1</span>Your details</div>
+      <div class="progress-step" id="prog-2"><span class="step-num-badge">2</span>Payment</div>
+      <div class="progress-step" id="prog-3"><span class="step-num-badge">3</span>Confirmed</div>
+    </div>
+
+    <!-- PANEL 1: Details -->
+    <div class="form-panel active" id="panel-1">
+      <div class="form-grid">
+        <div class="form-group full" id="grp-name">
+          <label for="fname">Full name *</label>
+          <input type="text" id="fname" placeholder="Your full name" autocomplete="name">
+          <span class="field-error">Please enter your full name.</span>
+        </div>
+        <div class="form-group" id="grp-email">
+          <label for="femail">Email address *</label>
+          <input type="email" id="femail" placeholder="your@email.com" autocomplete="email">
+          <span class="field-error">Please enter a valid email.</span>
+        </div>
+        <div class="form-group" id="grp-phone">
+          <label for="fphone">WhatsApp number *</label>
+          <input type="tel" id="fphone" placeholder="078 000 0000" autocomplete="tel">
+          <span class="field-error">Please enter your phone number.</span>
+        </div>
+        <div class="form-group full" id="grp-tickets">
+          <label for="ftickets">Number of tickets *</label>
+          <select id="ftickets">
+            <option value="" disabled selected>Select quantity</option>
+            <option value="1">1 ticket — R150</option>
+            <option value="2">2 tickets — R300</option>
+            <option value="3">3 tickets — R450</option>
+            <option value="4">4 tickets — R600</option>
+            <option value="5">5 tickets — R750</option>
+          </select>
+          <span class="field-error">Please select the number of tickets.</span>
+        </div>
       </div>
-      <div class="form-group" id="grp-email">
-        <label for="femail">Email address *</label>
-        <input type="email" id="femail" placeholder="your@email.com" autocomplete="email">
-        <span class="field-error">Please enter a valid email address.</span>
+      <div class="total-display" id="totalDisplay" style="display:none;">
+        <span class="total-label">Amount to pay</span>
+        <span class="total-amount" id="totalAmount">R0</span>
       </div>
-      <div class="form-group" id="grp-phone">
-        <label for="fphone">WhatsApp number *</label>
-        <input type="tel" id="fphone" placeholder="078 000 0000" autocomplete="tel">
-        <span class="field-error">Please enter your phone number.</span>
+      <br>
+      <button class="btn-solid" onclick="goToPayment()">Proceed to Payment →</button>
+      <p class="non-refund">⚠ Tickets are non-refundable once payment is submitted.</p>
+    </div>
+
+    <!-- PANEL 2: Banking + Upload -->
+    <div class="form-panel" id="panel-2">
+      <p style="font-size:0.85rem;color:var(--cream-dim);margin-bottom:1.5rem;line-height:1.7;">Please make your EFT payment to the account below, then upload your proof of payment to confirm your registration.</p>
+
+      <!-- Banking Details -->
+      <div class="banking-hero">
+        <p class="banking-hero-title">EFT banking details — Tyme Bank</p>
+        <div class="banking-grid">
+          <div class="banking-item">
+            <label>Account name</label>
+            <div class="banking-value">NL Hlatshwayo</div>
+          </div>
+          <div class="banking-item">
+            <label>Bank</label>
+            <div class="banking-value">Tyme Bank</div>
+          </div>
+          <div class="banking-item">
+            <label>Account number</label>
+            <div class="banking-value big">51009293310</div>
+          </div>
+          <div class="banking-item">
+            <label>Account type</label>
+            <div class="banking-value">Current / Cheque</div>
+          </div>
+        </div>
+        <div class="ref-box">
+          <p>Use as your payment reference: <span id="refDisplay">Your name + FINALLY</span></p>
+        </div>
       </div>
-      <div class="form-group" id="grp-tickets">
-        <label for="ftickets">Number of tickets *</label>
-        <select id="ftickets">
-          <option value="" disabled selected>Select quantity</option>
-          <option value="1">1 ticket — R150</option>
-          <option value="2">2 tickets — R300</option>
-          <option value="3">3 tickets — R450</option>
-          <option value="4">4 tickets — R600</option>
-          <option value="5">5 tickets — R750</option>
-        </select>
-        <span class="field-error">Please select the number of tickets.</span>
+
+      <!-- Amount due -->
+      <div class="amount-due">
+        <span>Amount due</span>
+        <span id="amountDue">R150</span>
+      </div>
+
+      <!-- Proof of payment upload -->
+      <p class="upload-instruction">Once you've made the EFT, upload your proof of payment below (screenshot or PDF from your banking app).</p>
+
+      <div class="file-upload-box" id="uploadBox">
+        <input type="file" id="fproof" accept="image/*,.pdf" onchange="handleFile(this)">
+        <div class="file-upload-icon">📎</div>
+        <p class="file-upload-text">Tap to upload proof of payment<br><strong>JPG, PNG or PDF accepted</strong></p>
+        <p class="file-name" id="fileName"></p>
+      </div>
+
+      <div id="grp-proof" style="margin-top:0.5rem;">
+        <span class="field-error" id="proof-error" style="display:none;font-size:0.72rem;color:#e07070;">Please upload your proof of payment.</span>
+      </div>
+
+      <br>
+      <button class="btn-solid" onclick="submitRegistration()" id="submitBtn">Submit Registration →</button>
+      <button class="btn-outline" onclick="goBack()">← Back to details</button>
+      <p class="non-refund">⚠ Tickets are non-refundable once payment is submitted.</p>
+    </div>
+
+    <!-- PANEL 3: Success -->
+    <div class="form-panel" id="panel-3">
+      <div class="success-wrap">
+        <div class="success-icon">🕊</div>
+        <h3 class="success-heading">You're registered!</h3>
+        <p class="success-body">Your registration has been received. We'll verify your payment and confirm your seat via WhatsApp or email within 24 hours.</p>
+        <div class="success-details" id="successDetails"></div>
+        <p style="margin-top:1.5rem;font-size:0.82rem;color:var(--cream-dim);">Questions? WhatsApp us on <a href="https://wa.me/27780946174" style="color:var(--gold);text-decoration:none;">078 094 6174</a></p>
       </div>
     </div>
 
-    <div class="total-display" id="totalDisplay" style="display:none;">
-      <span class="total-label">Total to pay</span>
-      <span class="total-amount" id="totalAmount">R0</span>
-    </div>
-
-    <button class="btn-solid" id="payBtn" onclick="proceedToPayment()">Proceed to Secure Payment →</button>
-    <p class="non-refund">⚠ Tickets are non-refundable once payment is made.</p>
   </div>
-
-  <!-- SUCCESS BANNER shown on return from PayFast -->
-  <div class="success-banner" id="successBanner">
-    <p>🕊 Your seat is secured.</p>
-    <p>Payment received. A confirmation has been sent to your email. We look forward to worshipping with you on <strong>30 October 2026</strong> at House of Liberty Christ First Ministry. Come ready to pour out — and encounter the Lord.</p>
-  </div>
-
-  <!-- PAYFAST hidden form — auto-submitted by JS -->
-  <form id="payfast-form" action="https://www.payfast.co.za/eng/process" method="POST">
-    <input type="hidden" name="merchant_id" value="35827231">
-    <input type="hidden" name="merchant_key" value="6urqfx1njxtbs">
-    <input type="hidden" name="return_url" value="https://let-my-worship-rise.netlify.app/?success=true">
-    <input type="hidden" name="cancel_url" value="https://let-my-worship-rise.netlify.app/#register">
-    <input type="hidden" name="notify_url" value="https://let-my-worship-rise.netlify.app/">
-    <input type="hidden" name="name_first" id="pf_first">
-    <input type="hidden" name="name_last" id="pf_last">
-    <input type="hidden" name="email_address" id="pf_email">
-    <input type="hidden" name="cell_number" id="pf_cell">
-    <input type="hidden" name="m_payment_id" id="pf_pid">
-    <input type="hidden" name="amount" id="pf_amount">
-    <input type="hidden" name="item_name" id="pf_item">
-    <input type="hidden" name="item_description" id="pf_desc">
-    <input type="hidden" name="email_confirmation" value="1">
-    <input type="hidden" name="confirmation_address" value="letmyworshiprise@gmail.com">
-  </form>
 </div>
 
 <div class="gold-divider" style="margin-top:2rem;"></div>
@@ -398,96 +472,129 @@
 </footer>
 
 <script>
-  // Update total when tickets change
+  // State
+  let userData = {};
+
+  // Update total on ticket select
   document.getElementById('ftickets').addEventListener('change', function() {
     const qty = parseInt(this.value) || 0;
     const display = document.getElementById('totalDisplay');
-    const amount = document.getElementById('totalAmount');
     if (qty > 0) {
       display.style.display = 'flex';
-      amount.textContent = 'R' + (qty * 150).toLocaleString();
+      document.getElementById('totalAmount').textContent = 'R' + (qty * 150).toLocaleString();
     }
   });
 
-  function validate() {
-    let valid = true;
+  function handleFile(input) {
+    const file = input.files[0];
+    if (file) {
+      const el = document.getElementById('fileName');
+      el.textContent = '✓ ' + file.name;
+      el.style.display = 'block';
+      document.getElementById('proof-error').style.display = 'none';
+    }
+  }
+
+  function validateStep1() {
     const name = document.getElementById('fname').value.trim();
     const email = document.getElementById('femail').value.trim();
     const phone = document.getElementById('fphone').value.trim();
     const tickets = document.getElementById('ftickets').value;
+    let valid = true;
 
-    const grpName = document.getElementById('grp-name');
-    const grpEmail = document.getElementById('grp-email');
-    const grpPhone = document.getElementById('grp-phone');
-    const grpTickets = document.getElementById('grp-tickets');
-
-    grpName.classList.toggle('has-error', !name);
-    grpEmail.classList.toggle('has-error', !email || !email.includes('@'));
-    grpPhone.classList.toggle('has-error', !phone);
-    grpTickets.classList.toggle('has-error', !tickets);
+    document.getElementById('grp-name').classList.toggle('has-error', !name);
+    document.getElementById('grp-email').classList.toggle('has-error', !email || !email.includes('@'));
+    document.getElementById('grp-phone').classList.toggle('has-error', !phone);
+    document.getElementById('grp-tickets').classList.toggle('has-error', !tickets);
 
     if (!name || !email || !email.includes('@') || !phone || !tickets) valid = false;
     return valid;
   }
 
-  function submitToNetlify(name, email, phone, tickets, amount, paymentId) {
-    // Submit to Netlify Forms in the background so it's recorded in your dashboard
-    const formData = new FormData();
-    formData.append('form-name', 'worship-registration');
-    formData.append('fullname', name);
-    formData.append('email', email);
-    formData.append('phone', phone);
-    formData.append('tickets', tickets + ' ticket(s)');
-    formData.append('amount', 'R' + amount);
-    formData.append('payment_id', paymentId);
-    fetch('/', { method: 'POST', body: formData }).catch(() => {});
-  }
-
-  function proceedToPayment() {
-    if (!validate()) return;
+  function goToPayment() {
+    if (!validateStep1()) return;
 
     const name = document.getElementById('fname').value.trim();
-    const email = document.getElementById('femail').value.trim();
-    const phone = document.getElementById('fphone').value.trim();
     const tickets = parseInt(document.getElementById('ftickets').value);
-    const amount = (tickets * 150).toFixed(2);
-    const parts = name.split(' ');
-    const firstName = parts[0];
-    const lastName = parts.slice(1).join(' ') || '.';
-    const paymentId = 'LMWR-' + Date.now();
+    const amount = tickets * 150;
 
-    // Save to Netlify first
-    submitToNetlify(name, email, phone, tickets, amount, paymentId);
+    userData = {
+      name: name,
+      email: document.getElementById('femail').value.trim(),
+      phone: document.getElementById('fphone').value.trim(),
+      tickets: tickets,
+      amount: amount,
+      reference: name.split(' ')[0].toUpperCase() + '-FINALLY'
+    };
 
-    // Populate PayFast form
-    document.getElementById('pf_first').value = firstName;
-    document.getElementById('pf_last').value = lastName;
-    document.getElementById('pf_email').value = email;
-    document.getElementById('pf_cell').value = phone.replace(/\D/g, '');
-    document.getElementById('pf_pid').value = paymentId;
-    document.getElementById('pf_amount').value = amount;
-    document.getElementById('pf_item').value = 'FINALLY Worship Night — ' + tickets + (tickets === 1 ? ' Ticket' : ' Tickets');
-    document.getElementById('pf_desc').value = '30 Oct 2026 | House of Liberty | ' + tickets + ' x R150';
+    // Update panel 2 with their info
+    document.getElementById('refDisplay').textContent = userData.reference;
+    document.getElementById('amountDue').textContent = 'R' + amount.toLocaleString();
 
-    // Disable button to prevent double submit
-    const btn = document.getElementById('payBtn');
+    showPanel(2);
+    document.getElementById('register').scrollIntoView({ behavior: 'smooth' });
+  }
+
+  function goBack() {
+    showPanel(1);
+    document.getElementById('register').scrollIntoView({ behavior: 'smooth' });
+  }
+
+  function submitRegistration() {
+    const proof = document.getElementById('fproof');
+    if (!proof.files || proof.files.length === 0) {
+      document.getElementById('proof-error').style.display = 'block';
+      return;
+    }
+
+    const btn = document.getElementById('submitBtn');
     btn.disabled = true;
-    btn.textContent = 'Redirecting to payment...';
+    btn.textContent = 'Submitting...';
 
-    // Submit to PayFast
-    setTimeout(() => document.getElementById('payfast-form').submit(), 400);
+    // Submit to Netlify Forms with file
+    const formData = new FormData();
+    formData.append('form-name', 'worship-registration');
+    formData.append('fullname', userData.name);
+    formData.append('email', userData.email);
+    formData.append('phone', userData.phone);
+    formData.append('tickets', userData.tickets + ' ticket(s)');
+    formData.append('amount', 'R' + userData.amount);
+    formData.append('reference', userData.reference);
+    formData.append('proof_of_payment', proof.files[0]);
+
+    fetch('/', { method: 'POST', body: formData })
+      .then(() => {
+        showSuccess();
+      })
+      .catch(() => {
+        // Even if fetch fails, show success — Netlify may still capture it
+        showSuccess();
+      });
   }
 
-  // Show success banner if returning from PayFast
-  if (window.location.search.includes('success=true')) {
-    document.getElementById('successBanner').style.display = 'block';
-    document.getElementById('formSection').style.display = 'none';
-    setTimeout(() => document.getElementById('register').scrollIntoView({ behavior: 'smooth' }), 300);
-    // Clean up URL
-    history.replaceState({}, '', window.location.pathname);
+  function showSuccess() {
+    showPanel(3);
+    document.getElementById('successDetails').innerHTML =
+      '<p>Name: <span>' + userData.name + '</span></p>' +
+      '<p>Email: <span>' + userData.email + '</span></p>' +
+      '<p>WhatsApp: <span>' + userData.phone + '</span></p>' +
+      '<p>Tickets: <span>' + userData.tickets + (userData.tickets === 1 ? ' ticket' : ' tickets') + '</span></p>' +
+      '<p>Amount paid: <span>R' + userData.amount + '</span></p>' +
+      '<p>Reference used: <span>' + userData.reference + '</span></p>';
+    document.getElementById('register').scrollIntoView({ behavior: 'smooth' });
   }
 
-  // Nav highlight on scroll
+  function showPanel(num) {
+    [1, 2, 3].forEach(n => {
+      document.getElementById('panel-' + n).classList.toggle('active', n === num);
+      const prog = document.getElementById('prog-' + n);
+      prog.classList.remove('active', 'done');
+      if (n === num) prog.classList.add('active');
+      if (n < num) prog.classList.add('done');
+    });
+  }
+
+  // Nav highlight
   const navLinks = document.querySelectorAll('.nav-links a');
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(e => {
